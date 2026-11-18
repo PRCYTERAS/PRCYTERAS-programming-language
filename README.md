@@ -1,4 +1,8 @@
 # PTS Beta 1.0
+# 🚀 PRCYTERAS Beta 1.0
+
+### ⬇️ [Kurulum Sihirbazını Doğrudan İndir (PTS-beta1.0-download.exe)](https://github.com)
+> *Tek tıkla indirip kurun — Zig, LLVM, 101 paket ve 80 kod örneği dahil.*
 
 PTS (PRCYTERAS) is a programming language and compiler for native Windows x64 programs. The `ornekler` folder contains the included `.pts` learning examples.
 
