@@ -1,0 +1,4 @@
+name=ecs
+version=1.0.0
+description=Varlik-bilesen-sistem dunyasi
+entry=ecs.pts

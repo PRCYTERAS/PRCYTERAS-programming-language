@@ -1,0 +1,4 @@
+name=stats
+version=1.0.0
+description=Tanimsal istatistikler, korelasyon, regresyon ve histogram
+entry=stats.pts

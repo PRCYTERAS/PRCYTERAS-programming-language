@@ -1,0 +1,5 @@
+// Konu: Metinlerde yeni satır, sekme, ters eğik çizgi ve tırnak.
+fn main():
+    print("Birinci satır\nİkinci satır")
+    print("Ad\tDeğer")
+    print("Tırnak: \"PRCYTERAS\"")

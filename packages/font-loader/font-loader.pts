@@ -1,0 +1,18 @@
+// Font dosyasini yalnizca bu surec icin kaydeder; yuklemek icin Engine.set_font_face cagirin.
+import FontLoader
+import Engine
+
+fn load(path: string):
+    return FontLoader.load(path)
+
+fn unload(path: string):
+    return FontLoader.unload(path)
+
+fn set_face(family: string):
+    return Engine.set_font_face(family)
+
+fn current_face():
+    return Engine.font_face()
+
+fn restore_default():
+    return Engine.set_font_face("Segoe UI")

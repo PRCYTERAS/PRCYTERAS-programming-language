@@ -1,0 +1,4 @@
+name=lighting2d
+version=1.0.0
+description=Isin izleme tabanli 2D isik ve golge
+entry=lighting2d.pts

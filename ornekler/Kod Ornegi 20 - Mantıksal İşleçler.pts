@@ -1,0 +1,8 @@
+// Konu: and/ve, or/veya ve not/değil.
+fn main():
+    bool anahtar_var = true
+    bool kapi_acik = false
+    if anahtar_var and not kapi_acik:
+        print("Kapıyı açabilirsin.")
+    if anahtar_var or kapi_acik:
+        print("En az bir koşul doğru.")

@@ -1,0 +1,16 @@
+// Konu: Girdi, durum güncelleme ve çizimi oyun döngüsünde birleştirme.
+import Engine, UI
+
+fn main():
+    Engine.init_window(640, 360, "Hareket örneği")
+    int x = 300
+    while Engine.is_running():
+        string tus = Engine.get_input()
+        if tus == "SOL" and x > 20:
+            x -= 5
+        if tus == "SAG" and x < 600:
+            x += 5
+        Engine.clear_screen(Color.rgb(20, 25, 40))
+        Engine.draw_circle(x, 180, 20, Color.ORANGE)
+        UI.draw_text("SOL/SAG veya A/D ile taşı", 20, 20, 18, Color.WHITE)
+        Engine.render_frame()

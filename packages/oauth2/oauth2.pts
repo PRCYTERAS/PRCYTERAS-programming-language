@@ -1,0 +1,15 @@
+// PRCYTERAS oauth2 paketi - PKCE, yetkilendirme URL'si, kod degisimi ve token yenileme
+// Native arka uc: OAuth2 (pts_stdlib_call uzerinden calisir).
+import OAuth2
+
+fn pkce():
+    return OAuth2.pkce()
+
+fn auth_url(config):
+    return OAuth2.auth_url(config)
+
+fn exchange(config, code, verifier):
+    return OAuth2.exchange(config, code, verifier)
+
+fn refresh(config, refresh_token):
+    return OAuth2.refresh(config, refresh_token)

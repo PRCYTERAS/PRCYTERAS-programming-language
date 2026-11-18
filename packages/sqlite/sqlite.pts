@@ -1,0 +1,33 @@
+// PRCYTERAS sqlite paketi - winsqlite3.dll uzerinden gercek SQLite: acma, sorgu, parametre, islem
+// Native arka uc: Sqlite (pts_stdlib_call uzerinden calisir).
+import Sqlite
+
+fn version():
+    return Sqlite.version()
+
+fn open(path):
+    return Sqlite.open(path)
+
+fn exec(db_id, sql):
+    return Sqlite.exec(db_id, sql)
+
+fn query(db_id, sql, params):
+    return Sqlite.query(db_id, sql, params)
+
+fn run(db_id, sql, params):
+    return Sqlite.run(db_id, sql, params)
+
+fn scalar(db_id, sql, params):
+    return Sqlite.scalar(db_id, sql, params)
+
+fn tables(db_id):
+    return Sqlite.tables(db_id)
+
+fn last_insert_id(db_id):
+    return Sqlite.last_insert_id(db_id)
+
+fn changes(db_id):
+    return Sqlite.changes(db_id)
+
+fn close(db_id):
+    return Sqlite.close(db_id)

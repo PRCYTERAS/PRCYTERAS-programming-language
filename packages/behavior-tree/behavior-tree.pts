@@ -1,0 +1,21 @@
+// PRCYTERAS behavior-tree paketi - Gercek behavior tree yurutucusu ve karatahta
+// Native arka uc: BehaviorTree (pts_stdlib_call uzerinden calisir).
+import BehaviorTree
+
+fn sequence(children):
+    return BehaviorTree.sequence(children)
+
+fn selector(children):
+    return BehaviorTree.selector(children)
+
+fn condition(key, op, value):
+    return BehaviorTree.condition(key, op, value)
+
+fn set(key, value):
+    return BehaviorTree.set(key, value)
+
+fn blackboard():
+    return BehaviorTree.blackboard()
+
+fn tick(tree, board):
+    return BehaviorTree.tick(tree, board)

@@ -1,0 +1,17 @@
+// Her kareyi kayit bolgesinden yakalar. Cagirilar arasindaki sureyi oyun dongusu belirler.
+import GifRecorder
+
+fn start(path: string, x: int, y: int, width: int, height: int, fps: int):
+    return GifRecorder.start(path, x, y, width, height, fps)
+
+fn capture():
+    return GifRecorder.capture()
+
+fn frame_count():
+    return GifRecorder.frame_count()
+
+fn save():
+    return GifRecorder.save()
+
+fn cancel():
+    return GifRecorder.cancel()

@@ -1,0 +1,24 @@
+// PRCYTERAS 0.9: 4-64 bit signed/unsigned integers, fields, and bit operations
+class NibbleCounter:
+    i4 value = 7
+
+    fn increment():
+        self.value += 1
+
+fn main():
+    auto counter = NibbleCounter()
+    counter.increment()
+
+    u4 unsigned_four_bit = 15
+    unsigned_four_bit += 1
+
+    u8 mask = 15
+    u8 selected_bits = mask & 5
+    u8 shifted = mask << 1
+    u64 wide_value = 4294967296
+
+    print("i4 class field after overflow: " + string(counter.value))
+    print("u4 after overflow: " + string(unsigned_four_bit))
+    print("AND result: " + string(selected_bits))
+    print("Shift result: " + string(shifted))
+    print("u64 value: " + string(wide_value))

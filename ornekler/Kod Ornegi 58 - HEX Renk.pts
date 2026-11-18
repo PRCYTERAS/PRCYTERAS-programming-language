@@ -1,0 +1,9 @@
+// Konu: Color.hex ile HTML biçiminde onaltılık renk kullanma.
+import Engine
+
+fn main():
+    Engine.init_window(480, 300, "HEX renk")
+    while Engine.is_running():
+        Engine.clear_screen(Color.hex("#1E90FF"))
+        Engine.draw_rect(120, 90, 240, 120, Color.hex("#FFD700"))
+        Engine.render_frame()

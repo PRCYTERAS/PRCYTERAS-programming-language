@@ -1,0 +1,21 @@
+// PRCYTERAS neat-ai paketi - NEAT genom, mutasyon ve caprazlama
+// Native arka uc: NeatAi (pts_stdlib_call uzerinden calisir).
+import NeatAi
+
+fn create(name, inputs, outputs, population):
+    return NeatAi.create(name, inputs, outputs, population)
+
+fn evaluate(name, index, input):
+    return NeatAi.evaluate(name, index, input)
+
+fn mutate(name, index, rate):
+    return NeatAi.mutate(name, index, rate)
+
+fn crossover(name, a, b, child):
+    return NeatAi.crossover(name, a, b, child)
+
+fn population(name):
+    return NeatAi.population(name)
+
+fn genome(name, index):
+    return NeatAi.genome(name, index)

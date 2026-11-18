@@ -1,0 +1,36 @@
+// PRCYTERAS ecs paketi - Varlik-bilesen-sistem dunyasi
+// Native arka uc: Ecs (pts_stdlib_call uzerinden calisir).
+import Ecs
+
+fn world(name):
+    return Ecs.world(name)
+
+fn create(name):
+    return Ecs.create(name)
+
+fn destroy(name, entity):
+    return Ecs.destroy(name, entity)
+
+fn alive(name, entity):
+    return Ecs.alive(name, entity)
+
+fn set(name, entity, component, value):
+    return Ecs.set(name, entity, component, value)
+
+fn get(name, entity, component):
+    return Ecs.get(name, entity, component)
+
+fn has(name, entity, component):
+    return Ecs.has(name, entity, component)
+
+fn remove(name, entity, component):
+    return Ecs.remove(name, entity, component)
+
+fn query(name, components):
+    return Ecs.query(name, components)
+
+fn count(name):
+    return Ecs.count(name)
+
+fn clear(name):
+    return Ecs.clear(name)

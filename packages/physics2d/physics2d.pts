@@ -1,0 +1,24 @@
+// PRCYTERAS physics2d paketi - Impuls tabanli 2D fizik dunyasi
+// Native arka uc: Physics2D (pts_stdlib_call uzerinden calisir).
+import Physics2D
+
+fn world(name, gravity):
+    return Physics2D.world(name, gravity)
+
+fn add(name, shape, x, y, mass, restitution, radius, half_width, half_height):
+    return Physics2D.add(name, shape, x, y, mass, restitution, radius, half_width, half_height)
+
+fn step(name, dt):
+    return Physics2D.step(name, dt)
+
+fn apply_force(name, id, fx, fy):
+    return Physics2D.apply_force(name, id, fx, fy)
+
+fn impulse(name, id, ix, iy):
+    return Physics2D.impulse(name, id, ix, iy)
+
+fn body(name, id):
+    return Physics2D.body(name, id)
+
+fn bodies(name):
+    return Physics2D.bodies(name)

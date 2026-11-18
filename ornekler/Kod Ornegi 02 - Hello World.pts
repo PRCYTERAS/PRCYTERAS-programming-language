@@ -1,0 +1,6 @@
+// CODE EXAMPLE 02 — Hello World
+// Concepts: the main function and printing text with the English built-in.
+// Compile: pts cargo "Kod Ornegi 02 - Hello World.pts"
+
+fn main():
+    print("Hello! This is my first PRCYTERAS program.")

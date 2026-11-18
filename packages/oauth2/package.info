@@ -1,0 +1,4 @@
+name=oauth2
+version=1.0.0
+description=PKCE, yetkilendirme URL'si, kod degisimi ve token yenileme
+entry=oauth2.pts

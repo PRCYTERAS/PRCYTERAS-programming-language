@@ -1,0 +1,10 @@
+import Clipboard
+
+fn write(text):
+    return Clipboard.write(text)
+
+fn read():
+    return Clipboard.read()
+
+fn clear():
+    return Clipboard.clear()

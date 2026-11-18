@@ -1,0 +1,22 @@
+import FixedPoint
+
+fn from_int(value):
+    return FixedPoint.from_int(value)
+fn from_float(value):
+    return FixedPoint.from_float(value)
+fn to_int(value):
+    return FixedPoint.to_int(value)
+fn to_float(value):
+    return FixedPoint.to_float(value)
+fn add(a, b):
+    return FixedPoint.add(a, b)
+fn sub(a, b):
+    return FixedPoint.sub(a, b)
+fn mul(a, b):
+    return FixedPoint.mul(a, b)
+fn div(a, b):
+    return FixedPoint.div(a, b)
+fn sqrt(value):
+    return FixedPoint.sqrt(value)
+fn compare(a, b):
+    return FixedPoint.compare(a, b)

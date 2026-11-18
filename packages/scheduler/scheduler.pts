@@ -1,0 +1,27 @@
+// Scheduler callback'i gizli bir thread'de calistirmaz. Ana dongude tick() cagirip
+// donen gorev kimliklerini uygulama tarafinda isleyin.
+import Scheduler
+
+fn after(id: string, delay_ms: int):
+    return Scheduler.after(id, delay_ms)
+
+fn every(id: string, interval_ms: int):
+    return Scheduler.every(id, interval_ms)
+
+fn at(id: string, unix_time_ms: int):
+    return Scheduler.at(id, unix_time_ms)
+
+fn tick():
+    return Scheduler.tick()
+
+fn cancel(id: string):
+    return Scheduler.cancel(id)
+
+fn clear():
+    return Scheduler.clear()
+
+fn count():
+    return Scheduler.count()
+
+fn next_delay_ms():
+    return Scheduler.next_delay_ms()

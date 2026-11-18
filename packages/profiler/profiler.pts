@@ -1,0 +1,18 @@
+import Profiler
+
+fn now():
+    return Profiler.now()
+fn now_millis():
+    return Profiler.now_millis()
+fn start(name):
+    return Profiler.start(name)
+fn stop(name):
+    return Profiler.stop(name)
+fn elapsed(name):
+    return Profiler.elapsed(name)
+fn reset():
+    return Profiler.reset()
+fn report():
+    return Profiler.report()
+fn samples(name):
+    return Profiler.samples(name)

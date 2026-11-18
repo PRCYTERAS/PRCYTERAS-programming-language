@@ -1,0 +1,4 @@
+name=binary-pack
+version=1.0.0
+description=Endian uyumlu ikili veri paketleme
+entry=binary-pack.pts

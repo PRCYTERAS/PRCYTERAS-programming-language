@@ -1,0 +1,48 @@
+// Build from CMD or PowerShell:
+// pts cargo "Kod Ornegi 13 - Konsolsuz Pencere.pts" --windowed --release
+// --windowed prevents a console window; --release uses native -O3 optimization.
+
+import Engine, UI
+
+fn main():
+    Engine.init_window(800, 500, "PRCYTERAS - Konsolsuz Renkli Oyun")
+
+    int tabak_x = 350
+    int tabak_y = 420
+    int tabak_genislik = 110
+    int tabak_hiz = 8
+    int elma_x = 160
+    int elma_y = 30
+    int skor = 0
+
+    while Engine.is_running():
+        string tus = Engine.get_input()
+
+        if tus == "SOL" and tabak_x > 0:
+            tabak_x -= tabak_hiz
+        if tus == "SAG" and tabak_x < 690:
+            tabak_x += tabak_hiz
+
+        elma_y += 4
+
+        if elma_y + 14 >= tabak_y:
+            if elma_x + 14 >= tabak_x and elma_x <= tabak_x + tabak_genislik:
+                skor += 1
+                elma_y = 30
+                elma_x += 173
+                if elma_x > 770:
+                    elma_x = 30
+
+        if elma_y > 500:
+            elma_y = 30
+            elma_x += 173
+            if elma_x > 770:
+                elma_x = 30
+
+        Engine.clear_screen(Color.rgb(18, 24, 46))
+        Engine.draw_rect(0, 455, 800, 45, Color.rgb(28, 42, 68))
+        Engine.draw_circle(elma_x, elma_y, 14, Color.named("Al Kırmızı"))
+        Engine.draw_rect(tabak_x, tabak_y, tabak_genislik, 22, Color.rgb(40, 190, 145))
+        UI.draw_text("Skor: " + string(skor), 24, 22, 24, Color.WHITE)
+        UI.draw_text("A/D veya ok tuslari: hareket | ESC: cikis", 24, 58, 16, Color.rgb(195, 210, 230))
+        Engine.render_frame()

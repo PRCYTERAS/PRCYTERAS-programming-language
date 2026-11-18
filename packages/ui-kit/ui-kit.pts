@@ -1,0 +1,44 @@
+// Engine/UI uzerinde calisan PTS 2B arayuz yardimcilari.
+// button_down tus basili kaldigi surece true doner; tek tik olayi olarak kullanmayin.
+import Engine
+import UI
+
+fn contains(x: int, y: int, width: int, height: int, point_x: int, point_y: int) -> bool:
+    return width > 0 and height > 0 and point_x >= x and point_y >= y and point_x < x + width and point_y < y + height
+
+fn label(text: string, x: int, y: int, size: int, color: string):
+    UI.draw_text(text, x, y, size, color)
+
+fn panel(x: int, y: int, width: int, height: int):
+    Engine.draw_rect(x, y, width, height, "#17212B")
+    Engine.draw_rect(x, y, width, 2, "#57748D")
+    Engine.draw_rect(x, y + height - 2, width, 2, "#57748D")
+    Engine.draw_rect(x, y, 2, height, "#57748D")
+    Engine.draw_rect(x + width - 2, y, 2, height, "#57748D")
+
+fn button_down(text: string, x: int, y: int, width: int, height: int):
+    int mouse_x = Engine.mouse_x()
+    int mouse_y = Engine.mouse_y()
+    bool hovered = contains(x, y, width, height, mouse_x, mouse_y)
+    if hovered:
+        Engine.draw_rect(x, y, width, height, "#356A9A")
+    else:
+        Engine.draw_rect(x, y, width, height, "#29445C")
+    UI.draw_text(text, x + 10, y + 6, 18, "#FFFFFF")
+    return hovered and Engine.mouse_button_down("LEFT")
+
+fn progress_bar(current: int, maximum: int, x: int, y: int, width: int, height: int):
+    if width <= 0 or height <= 0:
+        return false
+    Engine.draw_rect(x, y, width, height, "#26323C")
+    if maximum <= 0:
+        return true
+    int bounded = current
+    if bounded < 0:
+        bounded = 0
+    if bounded > maximum:
+        bounded = maximum
+    int fill = width * bounded / maximum
+    if fill > 0:
+        Engine.draw_rect(x, y, fill, height, "#37A66B")
+    return true

@@ -1,0 +1,13 @@
+// Twitch Helix API; Client ID ve uygun OAuth bilgileri gerekir.
+import Twitch
+
+fn token(client_id, client_secret):
+    return Twitch.token(client_id, client_secret)
+fn streams(client_id, access_token, user_login):
+    return Twitch.streams(client_id, access_token, user_login)
+fn users(client_id, access_token, login):
+    return Twitch.users(client_id, access_token, login)
+fn send_chat(client_id, access_token, broadcaster_id, sender_id, text):
+    return Twitch.send_chat(client_id, access_token, broadcaster_id, sender_id, text)
+fn top_games(client_id, access_token, count):
+    return Twitch.top_games(client_id, access_token, count)

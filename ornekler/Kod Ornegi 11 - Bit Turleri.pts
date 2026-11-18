@@ -1,0 +1,27 @@
+// KOD ÖRNEĞİ 11 — 4–64 bit tamsayılar ve bit işlemleri
+// iN / intN / signedN / tamsayiN: işaretli; uN / uintN / unsignedN / isaretsizN: işaretsiz.
+// N değeri 4 ile 64 arasındaki herhangi bir bit genişliği olabilir.
+
+class NibbleCounter:
+    i4 value = 7
+
+    fn increment():
+        self.value += 1
+
+fn main():
+    auto sayac = NibbleCounter()
+    sayac.increment() // i4 alanında 7 + 1, 4 bit genişliğinde sarar ve -8 olur.
+
+    u4 dort_bit = 15
+    dort_bit += 1 // u4 aralığı 0..15 olduğundan sonuç 0 olur.
+
+    u8 maske = 15
+    u8 secilen_bitler = maske & 5
+    u8 sola_kaydir = maske << 1
+    u64 genis_deger = 4294967296
+
+    print("i4 sınıf alanı: " + string(sayac.value))
+    print("u4 taşma sonrası: " + string(dort_bit))
+    print("AND sonucu: " + string(secilen_bitler))
+    print("Sola kaydırma: " + string(sola_kaydir))
+    print("u64 değer: " + string(genis_deger))

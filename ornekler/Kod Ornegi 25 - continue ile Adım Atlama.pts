@@ -1,0 +1,8 @@
+// Konu: continue komutuyla döngünün sonraki turuna geçme.
+fn main():
+    int sayi = 0
+    while sayi < 6:
+        sayi += 1
+        if sayi == 3:
+            continue
+        print("Sayı: " + string(sayi))

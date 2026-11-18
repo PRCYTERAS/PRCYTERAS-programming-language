@@ -1,0 +1,4 @@
+name=whatsapp-cloud
+version=1.0.0
+description=Meta WhatsApp Cloud API metin ve telefon bilgisi islemleri
+entry=whatsapp-cloud.pts

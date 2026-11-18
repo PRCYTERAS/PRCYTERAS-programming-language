@@ -1,0 +1,8 @@
+// Gercek Hugging Face HTTP API istemcisi. Token gereken modellerde api_key kullanin.
+import HuggingFace
+
+fn infer(api_key, model, messages, temperature, max_tokens, base_url):
+    return HuggingFace.infer(api_key, model, messages, temperature, max_tokens, base_url)
+
+fn models(api_key, base_url):
+    return HuggingFace.models(api_key, base_url)

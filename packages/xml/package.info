@@ -1,0 +1,4 @@
+name=xml
+version=1.0.0
+description=XML ayristirici, gezinme ve serilestirici
+entry=xml.pts

@@ -1,0 +1,75 @@
+// PRCYTERAS stats paketi - gercek istatistik hesaplari.
+// Native arka uc: Stats.
+import Stats
+
+fn sum(values):
+    return Stats.sum(values)
+
+fn mean(values):
+    return Stats.mean(values)
+
+fn average(values):
+    return Stats.average(values)
+
+fn count(values):
+    return Stats.count(values)
+
+fn min(values):
+    return Stats.min(values)
+
+fn max(values):
+    return Stats.max(values)
+
+fn range(values):
+    return Stats.range(values)
+
+fn product(values):
+    return Stats.product(values)
+
+fn median(values):
+    return Stats.median(values)
+
+fn mode(values):
+    return Stats.mode(values)
+
+fn variance(values):
+    return Stats.variance(values)
+
+fn sample_variance(values):
+    return Stats.sample_variance(values)
+
+fn stddev(values):
+    return Stats.stddev(values)
+
+fn sample_stddev(values):
+    return Stats.sample_stddev(values)
+
+fn percentile(values, percent):
+    return Stats.percentile(values, percent)
+
+fn zscore(value, values):
+    return Stats.zscore(value, values)
+
+fn zscores(values):
+    return Stats.zscores(values)
+
+fn normalize(values):
+    return Stats.normalize(values)
+
+fn covariance(left, right):
+    return Stats.covariance(left, right)
+
+fn correlation(left, right):
+    return Stats.correlation(left, right)
+
+fn linear_regression(x, y):
+    return Stats.linear_regression(x, y)
+
+fn summary(values):
+    return Stats.summary(values)
+
+fn moving_average(values, window: int):
+    return Stats.moving_average(values, window)
+
+fn histogram(values, bins: int):
+    return Stats.histogram(values, bins)

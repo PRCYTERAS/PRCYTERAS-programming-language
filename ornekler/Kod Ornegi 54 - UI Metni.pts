@@ -1,0 +1,10 @@
+// Konu: UI.draw_text(metin, x, y, punto, renk).
+import Engine, UI
+
+fn main():
+    Engine.init_window(640, 360, "Arayüz metni")
+    while Engine.is_running():
+        Engine.clear_screen(Color.rgb(20, 35, 55))
+        UI.draw_text("Skor: 120", 24, 24, 30, Color.WHITE)
+        UI.draw_text("PRCYTERAS UI modülü", 24, 72, 20, Color.YELLOW)
+        Engine.render_frame()

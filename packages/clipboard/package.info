@@ -1,0 +1,4 @@
+name=clipboard
+version=1.0.0
+description=Windows pano metni oku/yaz/temizle
+entry=clipboard.pts

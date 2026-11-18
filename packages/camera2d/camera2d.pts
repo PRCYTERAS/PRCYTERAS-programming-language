@@ -1,0 +1,36 @@
+// PRCYTERAS camera2d paketi - 2D kamera donusumleri, takip ve sarsinti
+// Native arka uc: Camera2D (pts_stdlib_call uzerinden calisir).
+import Camera2D
+
+fn create(x, y, zoom, width, height):
+    return Camera2D.create(x, y, zoom, width, height)
+
+fn world_to_screen(x, y):
+    return Camera2D.world_to_screen(x, y)
+
+fn screen_to_world(x, y):
+    return Camera2D.screen_to_world(x, y)
+
+fn world_to_screen_in(x, y, name):
+    return Camera2D.world_to_screen(x, y, name)
+
+fn screen_to_world_in(x, y, name):
+    return Camera2D.screen_to_world(x, y, name)
+
+fn follow(x, y, name, t):
+    return Camera2D.follow(x, y, name, t)
+
+fn shake(intensity, name, duration):
+    return Camera2D.shake(intensity, name, duration)
+
+fn update(dt, name):
+    return Camera2D.update(dt, name)
+
+fn offset(name):
+    return Camera2D.offset(name)
+
+fn zoom(level, name):
+    return Camera2D.zoom(level, name)
+
+fn get(name):
+    return Camera2D.get(name)

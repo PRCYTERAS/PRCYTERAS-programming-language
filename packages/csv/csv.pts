@@ -1,0 +1,91 @@
+// PRCYTERAS csv paketi - saf PTS ile RFC 4180 ayristirma/serilestirme.
+// Tirnakli alanlar, kacisli tirnaklar ve CRLF/LF satir sonlari desteklenir.
+import String
+
+fn parse(text: string):
+    auto rows = List<string>()
+    auto row = List<string>()
+    auto field = ""
+    bool quoted = false
+    bool pending = false
+    int i = 0
+    int total = String.length(text)
+    while i < total:
+        string ch = String.substring(text, i, 1)
+        if quoted:
+            if ch == "\"":
+                if i + 1 < total and String.substring(text, i + 1, 1) == "\"":
+                    field = field + "\""
+                    i = i + 2
+                else:
+                    quoted = false
+                    i = i + 1
+            else:
+                field = field + ch
+                i = i + 1
+            continue
+        if ch == "\"":
+            quoted = true
+            pending = true
+            i = i + 1
+            continue
+        if ch == ",":
+            row.add(field)
+            field = ""
+            pending = true
+            i = i + 1
+            continue
+        if ch == "\r":
+            row.add(field)
+            rows.add(row)
+            row = List<string>()
+            field = ""
+            pending = false
+            if i + 1 < total and String.substring(text, i + 1, 1) == "\n":
+                i = i + 2
+            else:
+                i = i + 1
+            continue
+        if ch == "\n":
+            row.add(field)
+            rows.add(row)
+            row = List<string>()
+            field = ""
+            pending = false
+            i = i + 1
+            continue
+        field = field + ch
+        pending = true
+        i = i + 1
+    if pending or row.size() > 0:
+        row.add(field)
+        rows.add(row)
+    return rows
+
+fn quote_field(field: string):
+    if String.contains(field, ",") or String.contains(field, "\"") or String.contains(field, "\n") or String.contains(field, "\r"):
+        return "\"" + String.replace(field, "\"", "\"\"") + "\""
+    return field
+
+fn stringify(rows):
+    auto result = ""
+    bool first_row = true
+    for row in rows:
+        if not first_row:
+            result = result + "\r\n"
+        first_row = false
+        bool first_field = true
+        for field in row:
+            if not first_field:
+                result = result + ","
+            first_field = false
+            result = result + quote_field(string(field))
+    return result
+
+fn header(rows):
+    if rows.size() == 0:
+        return List<string>()
+    return rows[0]
+
+fn row_count(rows):
+    return rows.size()

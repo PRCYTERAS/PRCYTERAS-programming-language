@@ -1,0 +1,4 @@
+name=navmesh3d
+version=1.0.0
+description=Kullanici tarafindan hazirlanan 3B yurunebilir dugum grafinda Euclidean A*; otomatik poligon navmesh pisirmez
+entry=navmesh3d.pts

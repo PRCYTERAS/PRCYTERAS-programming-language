@@ -1,0 +1,4 @@
+name=save-manager
+version=1.0.0
+description=JSON tabanli oyun kaydi yukleme ve kaydetme yardimcilari
+entry=save-manager.pts

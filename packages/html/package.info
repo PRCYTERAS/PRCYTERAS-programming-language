@@ -1,0 +1,4 @@
+name=html
+version=1.0.0
+description=HTML ayristirma, secici sorgusu, metin cikarma ve temizleme
+entry=html.pts

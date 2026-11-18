@@ -1,0 +1,12 @@
+// Ogg Vorbis codec'i runtime'a gomuludur; ek sistem codec'i veya internet gerekmez.
+// Cok kanalli ses stereo PCM'e indirgenir; XAudio2 oynatimi Windows ses cikisi ister.
+import Engine3D
+
+fn validate(path: string):
+    return Engine3D.audio_validate_ogg(path)
+
+fn play(path: string, volume: float):
+    return Engine3D.audio_play_ogg(path, volume)
+
+fn stop_all():
+    return Engine3D.stop_sounds()

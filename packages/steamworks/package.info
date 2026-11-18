@@ -1,0 +1,4 @@
+name=steamworks
+version=1.0.0
+description=Steam Web API istemcisi; Steamworks yerel SDK sarmalayicisi degildir
+entry=steamworks.pts

@@ -1,0 +1,18 @@
+// PRCYTERAS dns-lookup paketi - DNS cozumleme, ters cozumleme, ICMP ping ve toplu sorgu
+// Native arka uc: Dns (pts_stdlib_call uzerinden calisir).
+import Dns
+
+fn resolve(host):
+    return Dns.resolve(host)
+
+fn resolve_all(host):
+    return Dns.resolve_all(host)
+
+fn reverse(ip):
+    return Dns.reverse(ip)
+
+fn ping(host, timeout_ms):
+    return Dns.ping(host, timeout_ms)
+
+fn lookup(host):
+    return Dns.lookup(host)

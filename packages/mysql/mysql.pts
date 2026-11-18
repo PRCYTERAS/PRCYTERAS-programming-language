@@ -1,0 +1,21 @@
+// PRCYTERAS mysql paketi - Gercek MySQL/MariaDB wire protokolu (TLS olmadan)
+// Native arka uc: MySql (pts_stdlib_call uzerinden calisir).
+import MySql
+
+fn connect(host, port, user, password, database, timeout_ms):
+    return MySql.connect(host, port, user, password, database, timeout_ms)
+
+fn query(conn_id, sql, timeout_ms):
+    return MySql.query(conn_id, sql, timeout_ms)
+
+fn exec(conn_id, sql):
+    return MySql.exec(conn_id, sql)
+
+fn scalar(conn_id, sql):
+    return MySql.scalar(conn_id, sql)
+
+fn server(conn_id):
+    return MySql.server(conn_id)
+
+fn close(conn_id):
+    return MySql.close(conn_id)

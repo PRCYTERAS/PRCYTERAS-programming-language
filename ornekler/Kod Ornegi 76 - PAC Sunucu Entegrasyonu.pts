@@ -1,0 +1,14 @@
+// KOD ÖRNEĞİ 76 — PAC doğrulanmış ihlalleri sunucu ban politikasına bağlar.
+// PAC.pts bu dosyanın yanındaki klasörde bulunmalıdır.
+// İhlal kanıtını oyun sunucusu doğrulamadan true göndermeyin.
+import PAC
+
+fn on_server_validated_violation(player_id: string, evidence_summary: string):
+    auto decision = PAC.record_violation(player_id, evidence_summary, true)
+    auto player_status = PAC.status(player_id)
+    if PAC.is_banned(player_id):
+        print("Sunucu bağlantıyı reddetmeli: " + player_status)
+    print("PAC kararı: " + decision)
+
+fn main():
+    print("PAC örneği hazır; bunu oyun sunucusunun doğrulanmış ihlal olayına bağlayın.")

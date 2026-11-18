@@ -1,0 +1,17 @@
+// KOD ÖRNEĞİ 77 — Önceden tanımlı fonksiyon çağrıları
+// Aynı modülde yukarıda tanımlanan bir fonksiyon doğrudan LLVM çağrısı olabilir.
+// --release sırasında LLVM bu çağrıları inline etmeyi değerlendirebilir.
+
+fn puan_hesapla(deger: int) -> int:
+    return deger * 3 + 4
+
+fn tur_puani(tur_sayisi: int) -> int:
+    int toplam = 0
+    int tur = 0
+    while tur < tur_sayisi:
+        toplam += puan_hesapla(tur)
+        tur += 1
+    return toplam
+
+fn main():
+    print("5 tur toplam puan: " + string(tur_puani(5)))

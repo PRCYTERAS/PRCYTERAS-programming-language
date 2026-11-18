@@ -1,0 +1,28 @@
+import BinaryPack
+
+fn u8(value, little):
+    return BinaryPack.u8(value, little)
+fn u16(value, little):
+    return BinaryPack.u16(value, little)
+fn u32(value, little):
+    return BinaryPack.u32(value, little)
+fn u64(value, little):
+    return BinaryPack.u64(value, little)
+fn f32(value, little):
+    return BinaryPack.f32(value, little)
+fn f64(value, little):
+    return BinaryPack.f64(value, little)
+fn string(value, little):
+    return BinaryPack.string(value, little)
+fn read_u8(data, offset, little):
+    return BinaryPack.read_u8(data, offset, little)
+fn read_u16(data, offset, little):
+    return BinaryPack.read_u16(data, offset, little)
+fn read_u32(data, offset, little):
+    return BinaryPack.read_u32(data, offset, little)
+fn read_u64(data, offset, little):
+    return BinaryPack.read_u64(data, offset, little)
+fn read_string(data, offset, little):
+    return BinaryPack.read_string(data, offset, little)
+fn size(data):
+    return BinaryPack.size(data)

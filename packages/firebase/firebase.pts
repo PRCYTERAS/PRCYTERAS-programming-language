@@ -1,0 +1,11 @@
+// Firestore REST API; bu paket genel Firebase Admin SDK'si degildir.
+import Firebase
+
+fn set(project_id, api_key, document_path, data):
+    return Firebase.set(project_id, api_key, document_path, data)
+fn get(project_id, api_key, document_path):
+    return Firebase.get(project_id, api_key, document_path)
+fn list(project_id, api_key, collection_path):
+    return Firebase.list(project_id, api_key, collection_path)
+fn delete(project_id, api_key, document_path):
+    return Firebase.delete(project_id, api_key, document_path)

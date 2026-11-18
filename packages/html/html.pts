@@ -1,0 +1,24 @@
+// PRCYTERAS html paketi - HTML ayristirma, secici sorgusu, metin cikarma ve temizleme
+// Native arka uc: Html (pts_stdlib_call uzerinden calisir).
+import Html
+
+fn parse(text):
+    return Html.parse(text)
+
+fn query(node, selector):
+    return Html.query(node, selector)
+
+fn text(node):
+    return Html.text(node)
+
+fn strip_tags(text):
+    return Html.strip_tags(text)
+
+fn sanitize(text, allowed):
+    return Html.sanitize(text, allowed)
+
+fn escape(text, attribute):
+    return Html.escape(text, attribute)
+
+fn unescape(text):
+    return Html.unescape(text)

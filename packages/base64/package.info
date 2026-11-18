@@ -1,0 +1,4 @@
+name=base64
+version=1.0.0
+description=Base64, URL-safe Base64, hex ve bayt listesi donusumleri
+entry=base64.pts

@@ -1,0 +1,4 @@
+name=tray-icon
+version=1.0.0
+description=Windows bildirim alanina tepsi simgesi, tiklama olayi ve balon bildirimi ekleme
+entry=tray-icon.pts

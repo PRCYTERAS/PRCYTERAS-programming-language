@@ -1,0 +1,6 @@
+// KOD ÖRNEĞİ 01 — İlk program
+// Öğrenilenler: main fonksiyonu ve ekrana yazı yazdırma.
+// Derlemek için: pts cargo "Kod Ornegi 01 - Merhaba.pts"
+
+fn main():
+    yaz("Merhaba! Bu PRCYTERAS ile yazılmış ilk programım.")

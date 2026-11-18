@@ -1,0 +1,8 @@
+// Konu: 4-64 bit işaretli ve işaretsiz tamsayılar.
+fn main():
+    i8 sicaklik = -12
+    u8 byte_degeri = 250
+    int12 sensor = 2047
+    u32 renk = 16777215
+    print(string(sicaklik) + ", " + string(byte_degeri))
+    print(string(sensor) + ", " + string(renk))

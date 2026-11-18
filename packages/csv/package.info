@@ -1,0 +1,4 @@
+name=csv
+version=1.0.0
+description=RFC 4180 uyumlu CSV ayristirici ve serilestirici (saf PTS)
+entry=csv.pts

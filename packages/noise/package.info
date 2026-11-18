@@ -1,0 +1,4 @@
+name=noise
+version=1.0.0
+description=Perlin Simplex Worley ve FBM prosedurel gurultu
+entry=noise.pts

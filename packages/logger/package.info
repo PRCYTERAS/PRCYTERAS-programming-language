@@ -1,0 +1,4 @@
+name=logger
+version=1.0.0
+description=Seviyeli, zaman damgali, metin veya JSON bicimli logger
+entry=logger.pts

@@ -1,0 +1,4 @@
+name=socket
+version=1.0.0
+description=Gercek TCP/UDP soketleri: listen, accept, connect, send, recv, UDP
+entry=socket.pts

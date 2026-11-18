@@ -1,0 +1,21 @@
+// PRCYTERAS 0.10.2 — List öğelerini indisle okuma ve değiştirme
+// Bu örnek 0 tabanlı indislemeyi ve bileşik atamayı gösterir.
+
+fn main():
+    auto sayilar = List<int>()
+    sayilar.add(10)
+    sayilar.add(20)
+    sayilar.add(30)
+
+    print("İlk öğe: " + string(sayilar[0]))
+    print("İkinci öğe: " + string(sayilar[1]))
+
+    sayilar[1] = 25
+    sayilar[2] += 5
+
+    print("Değiştirilen ikinci öğe: " + string(sayilar[1]))
+    print("Artırılan üçüncü öğe: " + string(sayilar[2]))
+
+    print("Listenin tamamı:")
+    for sayi in sayilar:
+        print(string(sayi))

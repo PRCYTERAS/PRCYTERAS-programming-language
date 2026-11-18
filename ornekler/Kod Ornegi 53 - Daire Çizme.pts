@@ -1,0 +1,9 @@
+// Konu: Engine.draw_circle(x, y, yarıçap, renk).
+import Engine
+
+fn main():
+    Engine.init_window(500, 350, "Daire çizimi")
+    while Engine.is_running():
+        Engine.clear_screen(Color.BLACK)
+        Engine.draw_circle(250, 160, 70, Color.PURE_RED)
+        Engine.render_frame()

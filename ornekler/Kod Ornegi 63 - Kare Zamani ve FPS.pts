@@ -1,0 +1,21 @@
+// PRCYTERAS 0.10.0 — Kare suresi ve hedef kare hizi.
+// Engine.delta_time() saniye cinsinden onceki kare suresidir.
+// set_target_fps(0) kare sinirini kaldirir; yuksek CPU kullanimi olabilir.
+
+import Engine, UI
+
+fn main():
+    Engine.init_window(640, 360, "Kare zamani ornegi")
+    Engine.set_target_fps(60)
+
+    double konum = 0.0
+    while Engine.is_running():
+        double dt = Engine.delta_time()
+        konum += 120.0 * dt
+        if konum > 600.0:
+            konum = 0.0
+
+        Engine.clear_screen(Color.rgb(16, 22, 36))
+        Engine.draw_circle(konum, 190, 18, Color.CYAN)
+        UI.draw_text("Hareket kare suresine gore ayarlanir.", 20, 20, 18, Color.WHITE)
+        Engine.render_frame()

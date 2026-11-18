@@ -1,0 +1,4 @@
+name=html-parser
+version=1.0.0
+description=CSS secici destekli HTML ayristirici (html paketi ile ayni motor)
+entry=html-parser.pts

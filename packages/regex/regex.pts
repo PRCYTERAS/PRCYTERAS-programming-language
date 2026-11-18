@@ -1,0 +1,33 @@
+// PRCYTERAS regex paketi - gercek std::regex tabanli duzenli ifadeler.
+// Native arka uc: Regex. Bayt tabanli ECMAScript sozdizimi kullanir.
+import Regex
+
+fn is_match(pattern: string, text: string):
+    return Regex.is_match(pattern, text)
+
+fn find(pattern: string, text: string):
+    return Regex.find(pattern, text)
+
+fn find_index(pattern: string, text: string):
+    return Regex.find_index(pattern, text)
+
+fn find_all(pattern: string, text: string):
+    return Regex.find_all(pattern, text)
+
+fn groups(pattern: string, text: string):
+    return Regex.groups(pattern, text)
+
+fn replace(pattern: string, text: string, replacement: string):
+    return Regex.replace(pattern, text, replacement)
+
+fn replace_first(pattern: string, text: string, replacement: string):
+    return Regex.replace_first(pattern, text, replacement)
+
+fn split(pattern: string, text: string):
+    return Regex.split(pattern, text)
+
+fn count(pattern: string, text: string):
+    return Regex.count(pattern, text)
+
+fn escape(text: string):
+    return Regex.escape(text)

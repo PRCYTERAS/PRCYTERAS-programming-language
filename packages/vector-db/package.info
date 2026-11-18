@@ -1,0 +1,4 @@
+name=vector-db
+version=1.0.0
+description=Kosinus benzerligi tabanli vektor veritabani
+entry=vector-db.pts

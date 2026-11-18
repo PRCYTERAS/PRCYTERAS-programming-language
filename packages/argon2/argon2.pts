@@ -1,0 +1,9 @@
+// PRCYTERAS argon2 paketi - RFC 9106 Argon2id sifre hashleme
+// Native arka uc: Argon2 (pts_stdlib_call uzerinden calisir).
+import Argon2
+
+fn hash(password, salt, passes, memory_kb, lanes, length):
+    return Argon2.hash(password, salt, passes, memory_kb, lanes, length)
+
+fn verify(password, salt, expected_hex, passes, memory_kb, lanes):
+    return Argon2.verify(password, salt, expected_hex, passes, memory_kb, lanes)

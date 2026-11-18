@@ -1,0 +1,9 @@
+// nodes her biri x, y, z ve komsu dugum indekslerini tasiyan bir nesne olmali.
+// Bu modul 3B A* uygular; navmesh/geometri engellerini otomatik uretemez.
+import NavMesh3D
+
+fn find_path(nodes, start_index: int, goal_index: int):
+    return NavMesh3D.find_path(nodes, start_index, goal_index)
+
+fn path_length(nodes, path):
+    return NavMesh3D.path_length(nodes, path)

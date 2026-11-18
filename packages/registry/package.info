@@ -1,0 +1,4 @@
+name=registry
+version=1.0.0
+description=Windows HKCU registry string ve DWORD islemleri
+entry=registry.pts

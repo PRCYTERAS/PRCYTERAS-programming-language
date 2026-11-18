@@ -1,0 +1,4 @@
+name=discord-rpc
+version=1.0.0
+description=Discord yerel IPC Rich Presence istemcisi
+entry=discord-rpc.pts

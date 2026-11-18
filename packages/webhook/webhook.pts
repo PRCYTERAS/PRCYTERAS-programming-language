@@ -1,0 +1,15 @@
+// PRCYTERAS webhook paketi - JSON tabanli webhook POST: Discord, Slack ve ozel uclar
+// Native arka uc: Webhook (pts_stdlib_call uzerinden calisir).
+import Webhook
+
+fn send(url, body, content_type, headers):
+    return Webhook.send(url, body, content_type, headers)
+
+fn json(url, payload):
+    return Webhook.json(url, payload)
+
+fn discord(url, content, username):
+    return Webhook.discord(url, content, username)
+
+fn slack(url, text, channel):
+    return Webhook.slack(url, text, channel)

@@ -1,0 +1,8 @@
+// Konu: Birden çok şartı and/ve ile aynı if içinde birleştirme.
+fn main():
+    int yas = 25
+    bool bilet_var = true
+    if yas >= 18 and bilet_var:
+        print("Etkinliğe giriş uygun.")
+    else:
+        print("Giriş koşulları sağlanmadı.")

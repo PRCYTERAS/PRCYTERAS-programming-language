@@ -1,0 +1,11 @@
+// Konu: Bir if bloğunun içinde ikinci bir koşul kullanma.
+fn main():
+    bool uye = true
+    int yas = 20
+    if uye:
+        if yas >= 18:
+            print("Yetişkin üye girişi başarılı.")
+        else:
+            print("Üyelik var, yaş sınırı sağlanmıyor.")
+    else:
+        print("Önce üye olmalısın.")

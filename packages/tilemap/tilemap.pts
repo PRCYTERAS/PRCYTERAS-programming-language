@@ -1,0 +1,46 @@
+// Tilemap veri yapisi: her harita genislik, yukseklik ve duz bir karo dizisi tasir.
+// Dizi indeksi y * width + x olarak hesaplanir; koordinatlar sinir kontrolunden gecer.
+import Json
+
+fn create(width: int, height: int, default_tile: int):
+    if width <= 0 or height <= 0:
+        return null
+    if width > 100000 or height > 100000 or width * height > 1000000:
+        return null
+    auto map = Json.new_object()
+    auto cells = Json.new_object()
+    int i = 0
+    int total = width * height
+    while i < total:
+        Json.set(cells, string(i), default_tile)
+        i = i + 1
+    Json.set(map, "width", width)
+    Json.set(map, "height", height)
+    Json.set(map, "cells", cells)
+    return map
+
+fn width(map):
+    return Json.as_int(Json.get(map, "width"))
+
+fn height(map):
+    return Json.as_int(Json.get(map, "height"))
+
+fn get(map, x: int, y: int):
+    int w = width(map)
+    int h = height(map)
+    if x < 0 or y < 0 or x >= w or y >= h:
+        return -1
+    auto cells = Json.get(map, "cells")
+    return Json.as_int(Json.get(cells, string(y * w + x)))
+
+fn set(map, x: int, y: int, tile: int):
+    int w = width(map)
+    int h = height(map)
+    if x < 0 or y < 0 or x >= w or y >= h:
+        return false
+    auto cells = Json.get(map, "cells")
+    Json.set(cells, string(y * w + x), tile)
+    return true
+
+fn to_json(map):
+    return Json.stringify(map)

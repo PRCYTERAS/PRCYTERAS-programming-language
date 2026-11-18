@@ -1,0 +1,4 @@
+name=smtp-mail
+version=1.0.0
+description=Gercek SMTP istemcisi: EHLO, AUTH LOGIN/PLAIN, MIME mail gonderimi
+entry=smtp-mail.pts

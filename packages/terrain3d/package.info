@@ -1,0 +1,4 @@
+name=terrain3d
+version=1.0.0
+description=PNG JPEG BMP yukseklik haritasindan statik D3D11 ucgen arazisi; 2..2048 piksel, WIC destekli resimler
+entry=terrain3d.pts

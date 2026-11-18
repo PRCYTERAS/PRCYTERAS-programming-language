@@ -1,0 +1,12 @@
+// Konu: Metotta self ile o nesnenin alanını değiştirme.
+class Sayac:
+    int deger = 0
+
+    fn artir():
+        self.deger += 1
+
+fn main():
+    auto sayac = Sayac()
+    sayac.artir()
+    sayac.artir()
+    print("Sayaç: " + string(sayac.deger))

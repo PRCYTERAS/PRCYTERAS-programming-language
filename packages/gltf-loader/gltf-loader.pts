@@ -1,0 +1,9 @@
+// Engine3D penceresi baslatildiktan sonra kullanilir.
+// Ilk mesh/primitive ve statik ucgenler yuklenir; animasyon ve materyal aktarimi yoktur.
+import Engine3D
+
+fn load(path: string):
+    return Engine3D.load_gltf(path)
+
+fn unload(model_id: int):
+    return Engine3D.unload_model(model_id)

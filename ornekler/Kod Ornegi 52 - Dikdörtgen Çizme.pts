@@ -1,0 +1,10 @@
+// Konu: Engine.draw_rect(x, y, genişlik, yükseklik, renk).
+import Engine, UI
+
+fn main():
+    Engine.init_window(640, 360, "Dikdörtgen")
+    while Engine.is_running():
+        Engine.clear_screen(Color.rgb(25, 30, 45))
+        Engine.draw_rect(180, 100, 280, 140, Color.GREEN)
+        UI.draw_text("Renkli bir dikdörtgen", 190, 260, 22, Color.WHITE)
+        Engine.render_frame()

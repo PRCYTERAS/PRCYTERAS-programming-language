@@ -1,0 +1,4 @@
+name=bigint
+version=1.0.0
+description=Sinirsiz buyuklukte tamsayi aritmetigi
+entry=bigint.pts

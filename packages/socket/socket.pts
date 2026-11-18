@@ -1,0 +1,45 @@
+// PRCYTERAS socket paketi - Gercek TCP/UDP soketleri: listen, accept, connect, send, recv, UDP
+// Native arka uc: Socket (pts_stdlib_call uzerinden calisir).
+import Socket
+
+fn connect(host, port, timeout_ms):
+    return Socket.connect(host, port, timeout_ms)
+
+fn listen(port, backlog):
+    return Socket.listen(port, backlog)
+
+fn accept(server_id, timeout_ms):
+    return Socket.accept(server_id, timeout_ms)
+
+fn send(socket_id, data):
+    return Socket.send(socket_id, data)
+
+fn recv(socket_id, max_bytes, timeout_ms):
+    return Socket.recv(socket_id, max_bytes, timeout_ms)
+
+fn recv_exact(socket_id, size, timeout_ms):
+    return Socket.recv_exact(socket_id, size, timeout_ms)
+
+fn udp_bind(port):
+    return Socket.udp_bind(port)
+
+fn udp_send(socket_id, host, port, data):
+    return Socket.udp_send(socket_id, host, port, data)
+
+fn udp_recv(socket_id, max_bytes, timeout_ms):
+    return Socket.udp_recv(socket_id, max_bytes, timeout_ms)
+
+fn close(socket_id):
+    return Socket.close(socket_id)
+
+fn connected(socket_id):
+    return Socket.connected(socket_id)
+
+fn resolve(host):
+    return Socket.resolve(host)
+
+fn resolve_all(host):
+    return Socket.resolve_all(host)
+
+fn local_ip():
+    return Socket.local_ip()

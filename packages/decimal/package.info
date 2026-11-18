@@ -1,0 +1,4 @@
+name=decimal
+version=1.0.0
+description=Ondalik hassas parasal aritmetik
+entry=decimal.pts

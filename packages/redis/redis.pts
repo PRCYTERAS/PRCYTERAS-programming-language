@@ -1,0 +1,69 @@
+// PRCYTERAS redis paketi - Gercek RESP2 istemcisi: string, hash, liste, pub/sub ve TTL
+// Native arka uc: Redis (pts_stdlib_call uzerinden calisir).
+import Redis
+
+fn connect(host, port, timeout_ms):
+    return Redis.connect(host, port, timeout_ms)
+
+fn command(conn_id, parts, timeout_ms):
+    return Redis.command(conn_id, parts, timeout_ms)
+
+fn ping(conn_id):
+    return Redis.ping(conn_id)
+
+fn get(conn_id, key):
+    return Redis.get(conn_id, key)
+
+fn set(conn_id, key, value, ttl_seconds):
+    return Redis.set(conn_id, key, value, ttl_seconds)
+
+fn del(conn_id, key):
+    return Redis.del(conn_id, key)
+
+fn exists(conn_id, key):
+    return Redis.exists(conn_id, key)
+
+fn incr(conn_id, key):
+    return Redis.incr(conn_id, key)
+
+fn expire(conn_id, key, seconds):
+    return Redis.expire(conn_id, key, seconds)
+
+fn ttl(conn_id, key):
+    return Redis.ttl(conn_id, key)
+
+fn hset(conn_id, key, field, value):
+    return Redis.hset(conn_id, key, field, value)
+
+fn hget(conn_id, key, field):
+    return Redis.hget(conn_id, key, field)
+
+fn hgetall(conn_id, key):
+    return Redis.hgetall(conn_id, key)
+
+fn lpush(conn_id, key, value):
+    return Redis.lpush(conn_id, key, value)
+
+fn lrange(conn_id, key, start, stop):
+    return Redis.lrange(conn_id, key, start, stop)
+
+fn publish(conn_id, channel, message):
+    return Redis.publish(conn_id, channel, message)
+
+fn select(conn_id, index):
+    return Redis.select(conn_id, index)
+
+fn auth(conn_id, password):
+    return Redis.auth(conn_id, password)
+
+fn info(conn_id):
+    return Redis.info(conn_id)
+
+fn dbsize(conn_id):
+    return Redis.dbsize(conn_id)
+
+fn flushdb(conn_id):
+    return Redis.flushdb(conn_id)
+
+fn close(conn_id):
+    return Redis.close(conn_id)

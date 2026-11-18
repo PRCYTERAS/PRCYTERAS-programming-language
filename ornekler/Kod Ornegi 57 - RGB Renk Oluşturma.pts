@@ -1,0 +1,11 @@
+// Konu: Color.rgb ile 0-255 kırmızı, yeşil ve mavi kanalları.
+import Engine
+
+fn main():
+    Engine.init_window(520, 300, "RGB renkleri")
+    while Engine.is_running():
+        Engine.clear_screen(Color.rgb(16, 20, 32))
+        Engine.draw_rect(30, 50, 140, 180, Color.rgb(230, 40, 60))
+        Engine.draw_rect(190, 50, 140, 180, Color.rgb(40, 210, 100))
+        Engine.draw_rect(350, 50, 140, 180, Color.rgb(50, 100, 230))
+        Engine.render_frame()

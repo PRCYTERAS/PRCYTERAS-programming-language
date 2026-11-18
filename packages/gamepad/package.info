@@ -1,0 +1,4 @@
+name=gamepad
+version=1.0.0
+description=Windows XInput gamepad durum, dugme ve analog eksenleri
+entry=gamepad.pts

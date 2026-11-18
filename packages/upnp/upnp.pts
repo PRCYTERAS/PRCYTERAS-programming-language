@@ -1,0 +1,21 @@
+// PRCYTERAS upnp paketi - SSDP kesfi ve SOAP port yonlendirme (AddPortMapping/DeletePortMapping)
+// Native arka uc: Upnp (pts_stdlib_call uzerinden calisir).
+import Upnp
+
+fn discover(timeout_ms):
+    return Upnp.discover(timeout_ms)
+
+fn describe(location):
+    return Upnp.describe(location)
+
+fn add_mapping(control_url, service_type, external_port, internal_port, internal_client, protocol, description, lease):
+    return Upnp.add_mapping(control_url, service_type, external_port, internal_port, internal_client, protocol, description, lease)
+
+fn delete_mapping(control_url, service_type, external_port, protocol):
+    return Upnp.delete_mapping(control_url, service_type, external_port, protocol)
+
+fn external_ip(control_url, service_type):
+    return Upnp.external_ip(control_url, service_type)
+
+fn local_ip():
+    return Upnp.local_ip()

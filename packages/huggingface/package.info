@@ -1,0 +1,4 @@
+name=huggingface
+version=1.0.0
+description=Hugging Face Inference HTTP API istemcisi
+entry=huggingface.pts

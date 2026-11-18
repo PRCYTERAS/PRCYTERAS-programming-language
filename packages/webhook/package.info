@@ -1,0 +1,4 @@
+name=webhook
+version=1.0.0
+description=JSON tabanli webhook POST: Discord, Slack ve ozel uclar
+entry=webhook.pts

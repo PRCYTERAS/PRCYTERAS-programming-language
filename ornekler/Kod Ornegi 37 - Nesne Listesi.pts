@@ -1,0 +1,10 @@
+// Konu: Bir sınıfın nesnelerini List içinde saklama.
+class Kitap:
+    string ad = ""
+
+fn main():
+    auto kitaplar = List<Kitap>()
+    kitaplar.add(Kitap("Küçük Prens"))
+    kitaplar.add(Kitap("Martı"))
+    for kitap in kitaplar:
+        print(kitap.ad)

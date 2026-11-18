@@ -1,0 +1,4 @@
+name=cli-args
+version=1.0.0
+description=Komut satiri bayrak ve arguman ayrisimi
+entry=cli-args.pts

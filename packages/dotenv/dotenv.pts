@@ -1,0 +1,42 @@
+// PRCYTERAS dotenv paketi - gercek .env ayristirma, serilestirme ve genisletme.
+// Native arka uc: Dotenv.
+import Dotenv
+
+fn parse(text: string):
+    return Dotenv.parse(text)
+
+fn read(path: string):
+    return Dotenv.read(path)
+
+fn load(path: string):
+    return Dotenv.load(path)
+
+fn stringify(value):
+    return Dotenv.stringify(value)
+
+fn expand(value):
+    return Dotenv.expand(value)
+
+fn expand_with(value, extra):
+    return Dotenv.expand(value, extra)
+
+fn expand_text(text: string, value):
+    return Dotenv.expand_text(text, value)
+
+fn get(value, key: string):
+    return Dotenv.get(value, key)
+
+fn set(value, key: string, item):
+    return Dotenv.set(value, key, item)
+
+fn has(value, key: string):
+    return Dotenv.has(value, key)
+
+fn keys(value):
+    return Dotenv.keys(value)
+
+fn values(value):
+    return Dotenv.values(value)
+
+fn type(value):
+    return Dotenv.type(value)

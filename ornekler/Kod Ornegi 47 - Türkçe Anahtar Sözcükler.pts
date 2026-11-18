@@ -1,0 +1,7 @@
+// Konu: Türkçe sözdizimi eş anlamlarının İngilizce karşılıkları.
+islev iki_kat(sayi: sayı) -> sayı:
+    döndür sayi * 2
+
+fn main():
+    eger iki_kat(6) == 12:
+        yaz("Türkçe sözdizimi çalışıyor.")

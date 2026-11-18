@@ -1,0 +1,18 @@
+// PRCYTERAS web-server paketi - Gercek HTTP/1.1 yerel sunucu ve yonlendirme catisi
+// Native arka uc: WebServer (pts_stdlib_call uzerinden calisir).
+import WebServer
+
+fn start(port):
+    return WebServer.start(port)
+
+fn route(server_id, method, path, response):
+    return WebServer.route(server_id, method, path, response)
+
+fn step(server_id, timeout_ms):
+    return WebServer.step(server_id, timeout_ms)
+
+fn port(server_id):
+    return WebServer.port(server_id)
+
+fn stop(server_id):
+    return WebServer.stop(server_id)

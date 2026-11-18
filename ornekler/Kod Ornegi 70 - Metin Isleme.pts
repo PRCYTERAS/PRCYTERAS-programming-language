@@ -1,0 +1,22 @@
+// PRCYTERAS 0.10.6 — Metin arama, bölme, birleştirme ve dönüştürme
+// PRCYTERAS 0.10.6 — String search, split, join, and conversion
+import String, Console
+
+fn main():
+    auto satir = Console.read_line("Ad, puan ve türü virgülle ayırarak girin: ")
+    auto alanlar = String.split(String.trim(satir), ",")
+
+    print("Alan sayısı: " + string(alanlar.size()))
+    for alan in alanlar:
+        print("- " + String.trim(alan))
+
+    if String.contains(satir, "oyun"):
+        print("Oyun kaydı algılandı.")
+    if String.ends_with(String.trim(satir), ".pts"):
+        print("PRCYTERAS kaynak dosyası.")
+
+    auto puan_metni = Console.read_line("Tam sayı puan girin: ")
+    auto puan = String.to_int(String.trim(puan_metni))
+    print("Dönüştürülen sayı: " + string(puan))
+    print("Birleştirilmiş örnek: " + String.join(alanlar, " | "))
+    print("İlk 5 karakter: " + String.substring(satir, 0, 5))

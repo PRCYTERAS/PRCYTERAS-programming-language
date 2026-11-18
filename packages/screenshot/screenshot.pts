@@ -1,0 +1,8 @@
+// Acikca cagrildiginda ekran goruntusunu BMP dosyasi olarak yazar.
+import Screenshot
+
+fn capture(path: string):
+    return Screenshot.capture(path)
+
+fn capture_region(path: string, x: int, y: int, width: int, height: int):
+    return Screenshot.capture_region(path, x, y, width, height)

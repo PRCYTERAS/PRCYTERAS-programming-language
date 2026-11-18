@@ -1,0 +1,223 @@
+// PAC — PRCYTERAS Anti-Cheat policy module
+// Game servers should call this only after validating evidence on the server.
+// The append-only ledger must be writable only by trusted server administrators.
+import File, String, System, Console
+
+const int PAC_DAY_SECONDS = 86400
+const int PAC_THREE_DAYS_SECONDS = 259200
+const int PAC_MONTH_SECONDS = 2592000
+const int PAC_REPORT_COOLDOWN_SECONDS = 600
+const string PAC_DATABASE_NAME = "PAC_bans.log"
+
+fn database_path() -> string:
+    return File.parent(System.executable_path()) + "\\" + PAC_DATABASE_NAME
+
+fn valid_player_id(player_id: string) -> bool:
+    if String.length(player_id) == 0 or String.length(player_id) > 64:
+        return false
+    if String.trim(player_id) != player_id:
+        return false
+    if String.contains(player_id, "|") or String.contains(player_id, "\r") or String.contains(player_id, "\n"):
+        return false
+    return true
+
+fn clean_reason(reason: string) -> string:
+    auto safe = String.replace(reason, "|", " ")
+    safe = String.replace(safe, "\r", " ")
+    safe = String.replace(safe, "\n", " ")
+    return String.substring(safe, 0, 160)
+
+// Returns strikes|last_violation|ban_until|permanent|error.
+fn load_state(player_id: string, path: string) -> string:
+    if path == "":
+        return "0|0|0|false|true"
+    if not File.exists(path):
+        return "0|0|0|false|false"
+
+    auto contents = File.read_text(path)
+    if string(contents) == "null":
+        return "0|0|0|false|true"
+
+    int strikes = 0
+    int last_violation = 0
+    int ban_until = 0
+    bool permanent = false
+    auto rows = String.split(contents, "\n")
+    for row in rows:
+        auto line = String.trim(row)
+        if line == "":
+            continue
+        auto fields = String.split(line, "|")
+        if fields.size() != 7 or fields[0] != "V1":
+            return "0|0|0|false|true"
+        if fields[1] == player_id:
+            auto parsed_strikes = String.to_int(fields[2])
+            auto parsed_last = String.to_int(fields[3])
+            auto parsed_until = String.to_int(fields[4])
+            if string(parsed_strikes) == "null" or string(parsed_last) == "null" or string(parsed_until) == "null":
+                return "0|0|0|false|true"
+            if parsed_strikes < 1 or parsed_strikes > 4:
+                return "0|0|0|false|true"
+            if parsed_last <= 0 or parsed_until < 0 or (fields[5] != "true" and fields[5] != "false"):
+                return "0|0|0|false|true"
+            strikes = parsed_strikes
+            last_violation = parsed_last
+            ban_until = parsed_until
+            permanent = fields[5] == "true"
+            if permanent and (strikes != 4 or ban_until != 0):
+                return "0|0|0|false|true"
+            if not permanent and (strikes == 4 or ban_until <= last_violation):
+                return "0|0|0|false|true"
+    return string(strikes) + "|" + string(last_violation) + "|" + string(ban_until) + "|" + string(permanent) + "|false"
+
+fn field(state: string, index: int) -> string:
+    auto values = String.split(state, "|")
+    if index < 0 or index >= values.size():
+        return ""
+    return values[index]
+
+fn record_violation(player_id: string, reason: string, confirmed: bool) -> string:
+    return record_violation_at(player_id, reason, confirmed, System.unix_time(), database_path())
+
+// Deterministic form for server integrations and tests; now_unix is Unix time in seconds.
+fn record_violation_at(player_id: string, reason: string, confirmed: bool, now_unix: int, path: string) -> string:
+    if not confirmed:
+        return "UNCONFIRMED"
+    if not valid_player_id(player_id) or now_unix <= 0 or path == "":
+        return "INVALID_INPUT"
+
+    auto state = load_state(player_id, path)
+    if field(state, 4) == "true":
+        return "STORAGE_ERROR"
+    int strikes = String.to_int(field(state, 0))
+    int last_violation = String.to_int(field(state, 1))
+    int ban_until = String.to_int(field(state, 2))
+    bool permanent = field(state, 3) == "true"
+    if permanent:
+        return "BAN_PERMANENT_ACTIVE"
+    if now_unix < last_violation:
+        return "CLOCK_ROLLBACK"
+    if last_violation > 0 and now_unix < last_violation + PAC_REPORT_COOLDOWN_SECONDS:
+        return "COOLDOWN"
+    if ban_until > now_unix:
+        return "BAN_ACTIVE"
+
+    strikes += 1
+    if strikes > 4:
+        strikes = 4
+    int new_ban_until = 0
+    bool new_permanent = false
+    string decision = "BAN_PERMANENT"
+    if strikes == 1:
+        new_ban_until = now_unix + PAC_DAY_SECONDS
+        decision = "BAN_1_DAY"
+    else:
+        if strikes == 2:
+            new_ban_until = now_unix + PAC_THREE_DAYS_SECONDS
+            decision = "BAN_3_DAYS"
+        else:
+            if strikes == 3:
+                new_ban_until = now_unix + PAC_MONTH_SECONDS
+                decision = "BAN_30_DAYS"
+            else:
+                new_permanent = true
+
+    auto safe_reason = clean_reason(reason)
+    auto entry = "V1|" + player_id + "|" + string(strikes) + "|" + string(now_unix) + "|" + string(new_ban_until) + "|" + string(new_permanent) + "|" + safe_reason + "\n"
+    if not File.append_text(path, entry):
+        return "STORAGE_ERROR"
+    return decision
+
+fn status_at(player_id: string, now_unix: int, path: string) -> string:
+    if not valid_player_id(player_id) or now_unix <= 0:
+        return "INVALID_INPUT"
+    auto state = load_state(player_id, path)
+    if field(state, 4) == "true":
+        return "STORAGE_ERROR"
+    int strikes = String.to_int(field(state, 0))
+    int last_violation = String.to_int(field(state, 1))
+    int ban_until = String.to_int(field(state, 2))
+    bool permanent = field(state, 3) == "true"
+    if permanent:
+        return "PERMANENT|" + string(strikes) + "|-1|0"
+    int cooldown = 0
+    if now_unix >= last_violation and last_violation > 0 and now_unix < last_violation + PAC_REPORT_COOLDOWN_SECONDS:
+        cooldown = last_violation + PAC_REPORT_COOLDOWN_SECONDS - now_unix
+    if ban_until > now_unix:
+        if now_unix < last_violation:
+            return "BANNED_CLOCK_ROLLBACK|" + string(strikes) + "|" + string(ban_until - now_unix) + "|0"
+        return "BANNED|" + string(strikes) + "|" + string(ban_until - now_unix) + "|" + string(cooldown)
+    if now_unix < last_violation:
+        return "CLOCK_ROLLBACK|" + string(strikes) + "|0|0"
+    if cooldown > 0:
+        return "COOLDOWN|" + string(strikes) + "|0|" + string(cooldown)
+    return "CLEAR|" + string(strikes) + "|0|0"
+
+fn status(player_id: string) -> string:
+    return status_at(player_id, System.unix_time(), database_path())
+
+fn is_banned_at(player_id: string, now_unix: int, path: string) -> bool:
+    auto current_status = status_at(player_id, now_unix, path)
+    return String.starts_with(current_status, "BANNED") or String.starts_with(current_status, "PERMANENT|") or current_status == "STORAGE_ERROR" or String.starts_with(current_status, "CLOCK_ROLLBACK|")
+
+fn is_banned(player_id: string) -> bool:
+    return is_banned_at(player_id, System.unix_time(), database_path())
+
+fn ban_remaining_at(player_id: string, now_unix: int, path: string) -> int:
+    auto current_status = status_at(player_id, now_unix, path)
+    if current_status == "STORAGE_ERROR":
+        return -2
+    if String.starts_with(current_status, "CLOCK_ROLLBACK|"):
+        return -3
+    if String.starts_with(current_status, "PERMANENT|"):
+        return -1
+    if String.starts_with(current_status, "BANNED"):
+        auto fields = String.split(current_status, "|")
+        return String.to_int(fields[2])
+    return 0
+
+fn cooldown_remaining_at(player_id: string, now_unix: int, path: string) -> int:
+    if not valid_player_id(player_id) or now_unix <= 0:
+        return -1
+    auto state = load_state(player_id, path)
+    if field(state, 4) == "true":
+        return -2
+    int last_violation = String.to_int(field(state, 1))
+    if now_unix < last_violation:
+        return -3
+    if last_violation > 0 and now_unix < last_violation + PAC_REPORT_COOLDOWN_SECONDS:
+        return last_violation + PAC_REPORT_COOLDOWN_SECONDS - now_unix
+    return 0
+
+fn cooldown_remaining(player_id: string) -> int:
+    return cooldown_remaining_at(player_id, System.unix_time(), database_path())
+
+fn strikes_at(player_id: string, path: string) -> int:
+    if not valid_player_id(player_id):
+        return -1
+    auto state = load_state(player_id, path)
+    if field(state, 4) == "true":
+        return -2
+    return String.to_int(field(state, 0))
+
+fn main():
+    print("PAC — PRCYTERAS Anti-Cheat")
+    print("Bu araç oyun sunucusu yerine ban uygulamaz; sunucu entegrasyonu gerekir.")
+    while true:
+        print("1) Doğrulanmış ihlal kaydet   2) Oyuncu durumunu göster   0) Çık")
+        auto choice = Console.read_line("> ")
+        if choice == "0":
+            break
+        if choice == "1":
+            auto player_id = Console.read_line("Oyuncu kimliği: ")
+            auto reason = Console.read_line("Sunucuda doğrulanan ihlal açıklaması: ")
+            auto approval = Console.read_line("Kanıtı doğruladığınızı onaylamak için ONAY yazın: ")
+            auto result = record_violation(player_id, reason, approval == "ONAY")
+            print("PAC kararı: " + result)
+        elif choice == "2":
+            auto player_id = Console.read_line("Oyuncu kimliği: ")
+            print("Durum: " + status(player_id))
+            print("Ban kalan saniye (-1 kalıcı, -2 kayıt hatası): " + string(ban_remaining_at(player_id, System.unix_time(), database_path())))
+            print("Tekrar rapor cooldown saniye: " + string(cooldown_remaining(player_id)))
+        else:
+            print("Seçim anlaşılmadı.")

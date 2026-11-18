@@ -1,0 +1,27 @@
+// PRCYTERAS websocket paketi - RFC 6455 WebSocket istemci/sunucu (ws://; wss:// icin TLS yok)
+// Native arka uc: WebSocket (pts_stdlib_call uzerinden calisir).
+import WebSocket
+
+fn connect(url, timeout_ms):
+    return WebSocket.connect(url, timeout_ms)
+
+fn upgrade(socket_id, timeout_ms):
+    return WebSocket.upgrade(socket_id, timeout_ms)
+
+fn wrap(socket_id, is_client):
+    return WebSocket.wrap(socket_id, is_client)
+
+fn send(ws_id, text):
+    return WebSocket.send(ws_id, text)
+
+fn send_binary(ws_id, hex_text):
+    return WebSocket.send_binary(ws_id, hex_text)
+
+fn recv(ws_id, timeout_ms):
+    return WebSocket.recv(ws_id, timeout_ms)
+
+fn ping(ws_id, payload):
+    return WebSocket.ping(ws_id, payload)
+
+fn close(ws_id):
+    return WebSocket.close(ws_id)

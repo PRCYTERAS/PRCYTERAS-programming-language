@@ -1,0 +1,84 @@
+// PRCYTERAS datetime paketi - gercek takvim ve saat islemleri.
+// Native arka uc: DateTime.
+import DateTime
+
+fn now_unix():
+    return DateTime.now_unix()
+
+fn now_ms():
+    return DateTime.now_ms()
+
+fn now_iso():
+    return DateTime.now_iso()
+
+fn to_iso(seconds: int):
+    return DateTime.to_iso(seconds)
+
+fn parse_iso(text: string):
+    return DateTime.parse_iso(text)
+
+fn format(seconds: int, pattern: string):
+    return DateTime.format(seconds, pattern)
+
+fn format_utc(seconds: int, pattern: string):
+    return DateTime.format_utc(seconds, pattern)
+
+fn year(seconds: int):
+    return DateTime.year(seconds)
+
+fn month(seconds: int):
+    return DateTime.month(seconds)
+
+fn day(seconds: int):
+    return DateTime.day(seconds)
+
+fn hour(seconds: int):
+    return DateTime.hour(seconds)
+
+fn minute(seconds: int):
+    return DateTime.minute(seconds)
+
+fn second(seconds: int):
+    return DateTime.second(seconds)
+
+fn weekday(seconds: int):
+    return DateTime.weekday(seconds)
+
+fn day_of_year(seconds: int):
+    return DateTime.day_of_year(seconds)
+
+fn add_seconds(seconds: int, amount: int):
+    return DateTime.add_seconds(seconds, amount)
+
+fn add_days(seconds: int, amount: int):
+    return DateTime.add_days(seconds, amount)
+
+fn diff_seconds(left: int, right: int):
+    return DateTime.diff_seconds(left, right)
+
+fn unix_from_parts(year_value: int, month_value: int, day_value: int, hour_value: int, minute_value: int, second_value: int):
+    return DateTime.unix_from_parts(year_value, month_value, day_value, hour_value, minute_value, second_value)
+
+fn utc_from_parts(year_value: int, month_value: int, day_value: int, hour_value: int, minute_value: int, second_value: int):
+    return DateTime.utc_from_parts(year_value, month_value, day_value, hour_value, minute_value, second_value)
+
+fn is_leap_year(year_value: int):
+    return DateTime.is_leap_year(year_value)
+
+fn days_in_month(year_value: int, month_value: int):
+    return DateTime.days_in_month(year_value, month_value)
+
+fn timezone_offset_minutes():
+    return DateTime.timezone_offset_minutes()
+
+fn month_name(month_value: int):
+    return DateTime.month_name(month_value)
+
+fn day_name(seconds: int):
+    return DateTime.day_name(seconds)
+
+fn start_of_day(seconds: int):
+    return DateTime.start_of_day(seconds)
+
+fn start_of_day_utc(seconds: int):
+    return DateTime.start_of_day_utc(seconds)

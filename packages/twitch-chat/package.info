@@ -1,0 +1,4 @@
+name=twitch-chat
+version=1.0.0
+description=Twitch Helix API ve sohbet mesaji istemcisi
+entry=twitch-chat.pts

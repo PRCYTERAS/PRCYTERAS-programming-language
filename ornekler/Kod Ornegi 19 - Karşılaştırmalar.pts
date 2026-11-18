@@ -1,0 +1,6 @@
+// Konu: ==, !=, <, <=, > ve >= karşılaştırma işleçleri.
+fn main():
+    int puan = 75
+    print("Geçti mi? " + string(puan >= 50))
+    print("Tam puan mı? " + string(puan == 100))
+    print("Sıfır değil mi? " + string(puan != 0))

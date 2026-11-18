@@ -1,0 +1,4 @@
+name=profiler
+version=1.0.0
+description=Mikrosaniye tabanli calisma zamani profiler
+entry=profiler.pts

@@ -1,0 +1,9 @@
+// Konu: Birkaç olasılık arasından seçim yapma.
+fn main():
+    int sicaklik = 22
+    if sicaklik >= 30:
+        print("Sıcak")
+    elif sicaklik >= 18:
+        print("Ilık")
+    else:
+        print("Serin")

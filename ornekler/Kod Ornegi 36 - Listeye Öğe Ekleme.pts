@@ -1,0 +1,8 @@
+// Konu: List<T> oluşturma, add ile doldurma ve for ile gezinme.
+fn main():
+    auto puanlar = List<int>()
+    puanlar.add(10)
+    puanlar.add(25)
+    puanlar.add(40)
+    for puan in puanlar:
+        print("Puan: " + string(puan))

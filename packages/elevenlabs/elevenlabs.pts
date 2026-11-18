@@ -1,0 +1,14 @@
+// Gercek ElevenLabs HTTP API istemcisi. API anahtari gerekir.
+import ElevenLabs
+
+fn voices(api_key):
+    return ElevenLabs.voices(api_key)
+
+fn models(api_key):
+    return ElevenLabs.models(api_key)
+
+fn speak(api_key, voice_id, text, output_path, model):
+    return ElevenLabs.speak(api_key, voice_id, text, output_path, model)
+
+fn user(api_key):
+    return ElevenLabs.user(api_key)

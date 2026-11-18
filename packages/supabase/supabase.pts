@@ -1,0 +1,13 @@
+// Supabase REST API; proje URL'si ve anon/service key gerekir.
+import Supabase
+
+fn select(project_url, key, table, query):
+    return Supabase.select(project_url, key, table, query)
+fn insert(project_url, key, table, data):
+    return Supabase.insert(project_url, key, table, data)
+fn update(project_url, key, table, filter, data):
+    return Supabase.update(project_url, key, table, filter, data)
+fn delete(project_url, key, table, filter):
+    return Supabase.delete(project_url, key, table, filter)
+fn rpc(project_url, key, function_name, arguments):
+    return Supabase.rpc(project_url, key, function_name, arguments)

@@ -1,0 +1,9 @@
+// Konu: +, -, *, / ve % işleçleri.
+fn main():
+    int a = 17
+    int b = 5
+    print("Toplama: " + string(a + b))
+    print("Çıkarma: " + string(a - b))
+    print("Çarpma: " + string(a * b))
+    print("Bölme: " + string(a / b))
+    print("Kalan: " + string(a % b))

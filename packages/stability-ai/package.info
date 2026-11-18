@@ -1,0 +1,4 @@
+name=stability-ai
+version=1.0.0
+description=Stability AI gorsel uretim HTTP API istemcisi
+entry=stability-ai.pts

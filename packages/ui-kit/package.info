@@ -1,0 +1,4 @@
+name=ui-kit
+version=1.0.0
+description=PTS 2B Engine cizimi icin paneller, etiketler, basili dugmeler ve ilerleme cubuklari
+entry=ui-kit.pts

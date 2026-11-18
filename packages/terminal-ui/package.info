@@ -1,0 +1,4 @@
+name=terminal-ui
+version=1.0.0
+description=ANSI terminal renk tablo ve ilerleme cizimi
+entry=terminal-ui.pts

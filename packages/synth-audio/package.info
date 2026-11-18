@@ -1,0 +1,4 @@
+name=synth-audio
+version=1.0.0
+description=Gercek XAudio2 prosedurel oyun efektleri: impact jump coin explosion footstep whoosh
+entry=synth-audio.pts

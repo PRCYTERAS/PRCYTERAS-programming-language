@@ -1,0 +1,17 @@
+// Bu paket Dear ImGui baglantisi degil; PTS Engine/UI ile aninda cizilen 2B widget'lar sunar.
+import ui-kit as ui
+
+fn contains(x: int, y: int, width: int, height: int, point_x: int, point_y: int):
+    return ui.contains(x, y, width, height, point_x, point_y)
+
+fn label(text: string, x: int, y: int, size: int, color: string):
+    return ui.label(text, x, y, size, color)
+
+fn panel(x: int, y: int, width: int, height: int):
+    return ui.panel(x, y, width, height)
+
+fn button_down(text: string, x: int, y: int, width: int, height: int):
+    return ui.button_down(text, x, y, width, height)
+
+fn progress_bar(current: int, maximum: int, x: int, y: int, width: int, height: int):
+    return ui.progress_bar(current, maximum, x, y, width, height)

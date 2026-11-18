@@ -1,0 +1,4 @@
+name=toml
+version=1.0.0
+description=TOML yapilandirma ayristirici ve serilestirici
+entry=toml.pts

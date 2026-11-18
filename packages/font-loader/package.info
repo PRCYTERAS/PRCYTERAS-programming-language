@@ -1,0 +1,4 @@
+name=font-loader
+version=1.0.0
+description=Windows GDI ozel font kaydi ve PRCYTERAS 2B font ailesi secimi
+entry=font-loader.pts

@@ -1,0 +1,13 @@
+// Yalnizca o anki kullanicinin HKCU kayit defterinde islem yapar.
+import Registry
+
+fn exists_key(path: string):
+    return Registry.exists_key(path)
+fn get(path: string, name: string):
+    return Registry.get(path, name)
+fn set_string(path: string, name: string, value: string):
+    return Registry.set_string(path, name, value)
+fn set_dword(path: string, name: string, value: int):
+    return Registry.set_dword(path, name, value)
+fn delete_value(path: string, name: string):
+    return Registry.delete_value(path, name)

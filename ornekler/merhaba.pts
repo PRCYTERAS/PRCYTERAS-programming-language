@@ -1,0 +1,36 @@
+// PRCYTERAS cekirdek akisi: Turkce anahtar sozcukler
+yapılandır MODÜL -> Engine, UI
+yapılandır RENK -> YEŞİL
+
+süreç KurulumGörevi [metin: yazı, bekleme: sayı]
+    eylem Başlat
+        Engine -> yaz("[+] " + metin + " işlemi başlatıldı...")
+        Engine -> bekle(bekleme)
+        Engine -> yaz("[OK] " + metin + " başarıyla tamamlandı.")
+        Engine -> çizgi_çek()
+
+ana_akış
+    Engine -> başlık_ayarla("PRCYTERAS CLI Ecosystem - Kurulum Simülasyonu")
+    Engine -> renk_değiştir(RENK)
+    Engine -> yaz("=======================================")
+    Engine -> yaz("   PRCYTERAS (.pts) DERLEYİCİ TESTİ    ")
+    Engine.yaz("   Yapay Zeka Çalışma Modu: Luna Aktif ")
+    Engine -> yaz("=======================================")
+    Engine -> bekle(1000)
+
+    görevler = Yeni AkışListesi()
+    görevler -> ekle(KurulumGörevi("Kurulum dizini doğrulanıyor", 1500))
+    görevler -> ekle(KurulumGörevi("'pts cargo' derleyici çekirdeği yükleniyor", 2000))
+    görevler -> ekle(KurulumGörevi("Standart modüller kopyalanıyor", 1800))
+    görevler -> ekle(KurulumGörevi("Sistem PATH çevre değişkenleri ayarlanıyor", 1200))
+
+    her görev için görevler
+        görev -> Başlat()
+        Engine -> bekle(500)
+
+    Engine -> yaz("\n=======================================")
+    Engine -> yaz(" PRCYTERAS SİSTEME BAŞARIYLA KURULDU! ")
+    Engine -> yaz("=======================================")
+    Engine -> yaz("Derleme için: pts cargo kaynak.pts -o C:\\Derlemeler\\program.exe")
+    Engine -> yaz("\n[i] Simülasyon tamamlandı. Kapatılıyor...")
+    Engine -> bekle(3000)

@@ -1,0 +1,4 @@
+name=tween
+version=1.0.0
+description=Yumusatma egrisi ve zamanli gecisler
+entry=tween.pts

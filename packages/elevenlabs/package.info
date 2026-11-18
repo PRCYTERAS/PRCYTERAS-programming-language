@@ -1,0 +1,4 @@
+name=elevenlabs
+version=1.0.0
+description=ElevenLabs metinden sese HTTP API istemcisi
+entry=elevenlabs.pts

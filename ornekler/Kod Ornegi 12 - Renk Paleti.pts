@@ -1,0 +1,23 @@
+// KOD ÖRNEĞİ 12 — 500 adlandırılmış ve 10.000 üretilmiş renk
+// Renk adları Türkçe/İngilizce tanınır. Boşluklu adlar Color.named("...") ile kullanılabilir.
+// Color.at: 0..499; Color.generate: 0..9999; bu aralıkların dışı siyah döndürür.
+
+import Engine, UI
+
+fn main():
+    print("Adlandırılmış renk sayısı: " + string(Color.count()))
+    print("Üretilen renk sayısı: " + string(Color.generated_count()))
+
+    Engine.init_window(640, 360, "PRCYTERAS Renk Paleti")
+
+    while Engine.is_running():
+        Engine.clear_screen(Color.BLACK)
+        Engine.draw_rect(40, 90, 100, 80, Color.named("Gül Kırmızısı"))
+        Engine.draw_rect(170, 90, 100, 80, Color.PURE_RED)
+        Engine.draw_rect(300, 90, 100, 80, Color.at(149))
+        Engine.draw_rect(430, 90, 100, 80, Color.generate(2026))
+        Engine.draw_rect(40, 210, 100, 60, Color.index4(14))
+        Engine.draw_rect(170, 210, 100, 60, Color.rgb565(63488))
+        Engine.draw_rect(300, 210, 100, 60, Color.rgb_depth(15, 0, 8, 4))
+        UI.draw_text("Pencereyi kapatarak cikabilirsiniz.", 40, 35, 20, Color.WHITE)
+        Engine.render_frame()

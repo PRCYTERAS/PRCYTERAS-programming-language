@@ -1,0 +1,4 @@
+name=websocket
+version=1.0.0
+description=RFC 6455 WebSocket istemci/sunucu (ws://; wss:// icin TLS yok)
+entry=websocket.pts

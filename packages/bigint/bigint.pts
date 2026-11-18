@@ -1,0 +1,24 @@
+import BigInt
+
+fn parse(text):
+    return BigInt.parse(text)
+fn from_int(value):
+    return BigInt.from_int(value)
+fn to_string(value):
+    return BigInt.to_string(value)
+fn add(a, b):
+    return BigInt.add(a, b)
+fn sub(a, b):
+    return BigInt.sub(a, b)
+fn mul(a, b):
+    return BigInt.mul(a, b)
+fn div(a, b):
+    return BigInt.div(a, b)
+fn mod(a, b):
+    return BigInt.mod(a, b)
+fn pow(a, b):
+    return BigInt.pow(a, b)
+fn gcd(a, b):
+    return BigInt.gcd(a, b)
+fn compare(a, b):
+    return BigInt.compare(a, b)

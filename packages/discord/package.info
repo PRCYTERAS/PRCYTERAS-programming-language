@@ -1,0 +1,4 @@
+name=discord
+version=1.0.0
+description=Discord REST ve webhook istemcisi (token gerekir)
+entry=discord.pts

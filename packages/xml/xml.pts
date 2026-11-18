@@ -1,0 +1,54 @@
+// PRCYTERAS xml paketi - gercek XML ayristirma, gezinme ve serilestirme.
+// Native arka uc: Xml.
+import Xml
+
+fn parse(text: string):
+    return Xml.parse(text)
+
+fn stringify(value):
+    return Xml.stringify(value)
+
+fn stringify_pretty(value, pretty):
+    return Xml.stringify(value, pretty)
+
+fn get(value, key: string):
+    return Xml.get(value, key)
+
+fn find(value, name: string):
+    return Xml.find(value, name)
+
+fn find_all(value, name: string):
+    return Xml.find_all(value, name)
+
+fn attr(value, name: string):
+    return Xml.attr(value, name)
+
+fn attrs(value):
+    return Xml.attrs(value)
+
+fn text(value):
+    return Xml.text(value)
+
+fn children(value):
+    return Xml.children(value)
+
+fn child(value, name: string):
+    return Xml.child(value, name)
+
+fn name(value):
+    return Xml.name(value)
+
+fn has(value, key: string):
+    return Xml.has(value, key)
+
+fn count(value):
+    return Xml.count(value)
+
+fn escape(text: string):
+    return Xml.escape(text)
+
+fn unescape(text: string):
+    return Xml.unescape(text)
+
+fn type(value):
+    return Xml.type(value)

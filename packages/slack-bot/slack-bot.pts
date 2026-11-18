@@ -1,0 +1,11 @@
+// Slack Web API; bot tokenlerini kaynak kodda saklamayin.
+import Slack
+
+fn post(token, channel, text):
+    return Slack.post(token, channel, text)
+fn webhook(url, text):
+    return Slack.webhook(url, text)
+fn history(token, channel, limit):
+    return Slack.history(token, channel, limit)
+fn users(token):
+    return Slack.users(token)

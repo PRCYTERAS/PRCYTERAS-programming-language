@@ -1,0 +1,69 @@
+// PRCYTERAS logger paketi - gercek seviyeli logger.
+// Native arka uc: Logger.
+import Logger
+
+fn create(name: string):
+    return Logger.create(name)
+
+fn create_default():
+    return Logger.create()
+
+fn child(log, name: string):
+    return Logger.child(log, name)
+
+fn with_name(log, name: string):
+    return Logger.with_name(log, name)
+
+fn with_field(log, key: string, value):
+    return Logger.with_field(log, key, value)
+
+fn set_level(log, level: string):
+    return Logger.set_level(log, level)
+
+fn get_level(log):
+    return Logger.get_level(log)
+
+fn is_enabled(log, level: string):
+    return Logger.is_enabled(log, level)
+
+fn set_file(log, path: string):
+    return Logger.set_file(log, path)
+
+fn set_format(log, format: string):
+    return Logger.set_format(log, format)
+
+fn name(log):
+    return Logger.name(log)
+
+fn file(log):
+    return Logger.file(log)
+
+fn format(log):
+    return Logger.format(log)
+
+fn fields(log):
+    return Logger.fields(log)
+
+fn log(target, level: string, message):
+    return Logger.log(target, level, message)
+
+fn trace(log, message):
+    return Logger.trace(log, message)
+
+fn debug(log, message):
+    return Logger.debug(log, message)
+
+fn info(log, message):
+    return Logger.info(log, message)
+
+fn warn(log, message):
+    return Logger.warn(log, message)
+
+fn error(log, message):
+    return Logger.error(log, message)
+
+fn fatal(log, message):
+    return Logger.fatal(log, message)
+
+fn flush(log):
+    return Logger.flush(log)

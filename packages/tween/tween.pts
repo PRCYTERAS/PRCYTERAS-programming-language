@@ -1,0 +1,21 @@
+// PRCYTERAS tween paketi - Yumusatma egrisi ve zamanli gecisler
+// Native arka uc: Tween (pts_stdlib_call uzerinden calisir).
+import Tween
+
+fn ease(name, t):
+    return Tween.ease(name, t)
+
+fn create(from, to, duration, easing, loop, name):
+    return Tween.create(from, to, duration, easing, loop, name)
+
+fn update(name, dt):
+    return Tween.update(name, dt)
+
+fn value(name):
+    return Tween.value(name)
+
+fn done(name):
+    return Tween.done(name)
+
+fn reset(name):
+    return Tween.reset(name)

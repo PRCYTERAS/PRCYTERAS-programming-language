@@ -1,0 +1,21 @@
+// PRCYTERAS zip-archive paketi - Gercek DEFLATE/ZIP arsiv olusturma, listeleme ve cikarma
+// Native arka uc: ZipArchive (pts_stdlib_call uzerinden calisir).
+import ZipArchive
+
+fn crc32(text):
+    return ZipArchive.crc32(text)
+
+fn deflate(text):
+    return ZipArchive.deflate(text)
+
+fn inflate(hex_text):
+    return ZipArchive.inflate(hex_text)
+
+fn create(path, entries, compress):
+    return ZipArchive.create(path, entries, compress)
+
+fn list(path):
+    return ZipArchive.list(path)
+
+fn extract(path, name):
+    return ZipArchive.extract(path, name)

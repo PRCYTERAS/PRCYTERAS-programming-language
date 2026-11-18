@@ -1,0 +1,11 @@
+// WIC kullanarak diskteki resimleri boyutlandirir, kirpar veya formatini donusturur.
+import ImageEdit
+
+fn resize(input_path: string, output_path: string, width: int, height: int):
+    return ImageEdit.resize(input_path, output_path, width, height)
+
+fn crop(input_path: string, output_path: string, x: int, y: int, width: int, height: int):
+    return ImageEdit.crop(input_path, output_path, x, y, width, height)
+
+fn convert(input_path: string, output_path: string, format: string):
+    return ImageEdit.convert(input_path, output_path, format)

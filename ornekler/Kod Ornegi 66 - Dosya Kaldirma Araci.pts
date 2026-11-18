@@ -1,0 +1,30 @@
+// PRCYTERAS 0.10.3 — Onaylı dosya veya klasör kaldırma aracı
+// Dosya silmek kalıcıdır. Klasör kaldırma kök dizini ve programın çalışma dizinini reddeder.
+
+fn main():
+    auto hedef = Console.read_line("Kaldırılacak dosya veya klasör yolunu girin: ")
+
+    if File.is_file(hedef):
+        auto onay = Console.read_line("Dosya silinsin mi? Onay için EVET yazın: ")
+        if onay == "EVET":
+            if File.delete_file(hedef):
+                print("Dosya silindi.")
+            else:
+                print("Dosya silinemedi. Yol veya izinleri kontrol edin.")
+        else:
+            print("İşlem iptal edildi.")
+    elif File.is_directory(hedef):
+        print("Klasör içeriği:")
+        for oge in File.list(hedef):
+            print(oge)
+
+        auto onay = Console.read_line("Klasör ve içindekiler silinsin mi? Onay için EVET yazın: ")
+        if onay == "EVET":
+            if File.remove_tree(hedef):
+                print("Klasör kaldırıldı.")
+            else:
+                print("Klasör kaldırılamadı. Kök/çalışma dizini ve üst dizinler korunur.")
+        else:
+            print("İşlem iptal edildi.")
+    else:
+        print("Bu yol bir dosya veya klasör değil.")

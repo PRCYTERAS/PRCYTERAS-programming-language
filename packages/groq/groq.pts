@@ -1,0 +1,8 @@
+// Gercek Groq HTTP API istemcisi. API anahtari gerekir.
+import Groq
+
+fn chat(api_key, model, messages, temperature, max_tokens, base_url):
+    return Groq.chat(api_key, model, messages, temperature, max_tokens, base_url)
+
+fn models(api_key, base_url):
+    return Groq.models(api_key, base_url)

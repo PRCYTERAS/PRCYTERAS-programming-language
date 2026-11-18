@@ -1,0 +1,33 @@
+// PRCYTERAS http paketi - WinINet tabanli HTTPS destekli HTTP istemcisi (GET/POST/PUT/DELETE/PATCH)
+// Native arka uc: Http (pts_stdlib_call uzerinden calisir).
+import Http
+
+fn request(method, url, body, headers, timeout_ms):
+    return Http.request(method, url, body, headers, timeout_ms)
+
+fn get(url, headers, timeout_ms):
+    return Http.get(url, headers, timeout_ms)
+
+fn post(url, body, content_type, headers, timeout_ms):
+    return Http.post(url, body, content_type, headers, timeout_ms)
+
+fn put(url, body, content_type, headers, timeout_ms):
+    return Http.put(url, body, content_type, headers, timeout_ms)
+
+fn delete(url, headers):
+    return Http.delete(url, headers)
+
+fn patch(url, body, content_type, headers):
+    return Http.patch(url, body, content_type, headers)
+
+fn json_get(url, headers):
+    return Http.json_get(url, headers)
+
+fn post_json(url, body, headers):
+    return Http.post_json(url, body, headers)
+
+fn encode_url(text):
+    return Http.encode_url(text)
+
+fn decode_url(text):
+    return Http.decode_url(text)

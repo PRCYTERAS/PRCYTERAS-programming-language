@@ -1,0 +1,13 @@
+// KOD ÖRNEĞİ 05 — While döngüsü
+// Öğrenilenler: koşul doğru olduğu sürece tekrarlama ve toplam hesaplama.
+
+fn main():
+    int sayi = 1
+    int toplam = 0
+
+    while sayi <= 5:
+        toplam += sayi
+        print("Eklenen sayı: " + string(sayi))
+        sayi += 1
+
+    print("1 ile 5 arasındaki sayıların toplamı: " + string(toplam))

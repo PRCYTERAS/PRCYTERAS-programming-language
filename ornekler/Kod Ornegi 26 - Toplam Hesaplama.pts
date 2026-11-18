@@ -1,0 +1,8 @@
+// Konu: Döngü içinde biriktirici değişken kullanma.
+fn main():
+    int sayi = 1
+    int toplam = 0
+    while sayi <= 100:
+        toplam += sayi
+        sayi += 1
+    print("1-100 toplamı: " + string(toplam))

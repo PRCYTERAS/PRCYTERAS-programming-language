@@ -1,0 +1,48 @@
+// PRCYTERAS fuzzy-search paketi - gercek bulanik arama.
+// Native arka uc: Fuzzy.
+import Fuzzy
+
+fn distance(left: string, right: string):
+    return Fuzzy.distance(left, right)
+
+fn ratio(left: string, right: string):
+    return Fuzzy.ratio(left, right)
+
+fn partial_ratio(query: string, text: string):
+    return Fuzzy.partial_ratio(query, text)
+
+fn token_sort_ratio(left: string, right: string):
+    return Fuzzy.token_sort_ratio(left, right)
+
+fn token_set_ratio(left: string, right: string):
+    return Fuzzy.token_set_ratio(left, right)
+
+fn score(query: string, text: string):
+    return Fuzzy.score(query, text)
+
+fn contains(text: string, query: string):
+    return Fuzzy.contains(text, query)
+
+fn starts_with(text: string, query: string):
+    return Fuzzy.starts_with(text, query)
+
+fn ends_with(text: string, query: string):
+    return Fuzzy.ends_with(text, query)
+
+fn match(query: string, text: string):
+    return Fuzzy.match(query, text)
+
+fn match_threshold(query: string, text: string, threshold):
+    return Fuzzy.match(query, text, threshold)
+
+fn search(query: string, candidates):
+    return Fuzzy.search(query, candidates)
+
+fn search_threshold(query: string, candidates, threshold):
+    return Fuzzy.search(query, candidates, threshold)
+
+fn search_limited(query: string, candidates, threshold, limit: int):
+    return Fuzzy.search(query, candidates, threshold, limit)
+
+fn best(query: string, candidates):
+    return Fuzzy.best(query, candidates)

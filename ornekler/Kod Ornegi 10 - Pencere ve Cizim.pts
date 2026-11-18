@@ -1,0 +1,14 @@
+// KOD ÖRNEĞİ 10 — Pencere ve temel çizim
+// Öğrenilenler: Engine ile pencere açma, şekil çizme ve UI ile yazı gösterme.
+// Programın penceresini kapatarak döngüden çıkabilirsiniz.
+
+import Engine, UI
+
+fn main():
+    Engine.init_window(640, 360, "PRCYTERAS - Çizim örneği")
+
+    while Engine.is_running():
+        Engine.clear_screen(Color.BLACK)
+        Engine.draw_rect(250, 130, 140, 80, Color.RED)
+        UI.draw_text("Bu dikdörtgen Engine ile çizildi.", 30, 30, 22, Color.WHITE)
+        Engine.render_frame()

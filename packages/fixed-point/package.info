@@ -1,0 +1,4 @@
+name=fixed-point
+version=1.0.0
+description=Deterministik 16.16 sabit nokta aritmetigi
+entry=fixed-point.pts

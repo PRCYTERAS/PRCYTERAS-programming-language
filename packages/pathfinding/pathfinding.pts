@@ -1,0 +1,24 @@
+// PRCYTERAS pathfinding paketi - A*, Dijkstra, BFS, akis alani ve gorus hatti
+// Native arka uc: Pathfinding (pts_stdlib_call uzerinden calisir).
+import Pathfinding
+
+fn astar(grid, sx, sy, gx, gy):
+    return Pathfinding.astar(grid, sx, sy, gx, gy)
+
+fn dijkstra(grid, sx, sy, gx, gy):
+    return Pathfinding.dijkstra(grid, sx, sy, gx, gy)
+
+fn bfs(grid, sx, sy, gx, gy):
+    return Pathfinding.bfs(grid, sx, sy, gx, gy)
+
+fn dfs(grid, sx, sy, gx, gy):
+    return Pathfinding.dfs(grid, sx, sy, gx, gy)
+
+fn flow_field(grid, gx, gy):
+    return Pathfinding.flow_field(grid, gx, gy)
+
+fn line_of_sight(grid, x0, y0, x1, y1):
+    return Pathfinding.line_of_sight(grid, x0, y0, x1, y1)
+
+fn path_length(path):
+    return Pathfinding.path_length(path)

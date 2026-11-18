@@ -1,0 +1,24 @@
+// PRCYTERAS smtp-mail paketi - Gercek SMTP istemcisi: EHLO, AUTH LOGIN/PLAIN, MIME mail gonderimi
+// Native arka uc: Smtp (pts_stdlib_call uzerinden calisir).
+import Smtp
+
+fn connect(host, port, timeout_ms):
+    return Smtp.connect(host, port, timeout_ms)
+
+fn ehlo(session_id, name):
+    return Smtp.ehlo(session_id, name)
+
+fn auth(session_id, user, password, method):
+    return Smtp.auth(session_id, user, password, method)
+
+fn send(session_id, from, to, subject, body, html):
+    return Smtp.send(session_id, from, to, subject, body, html)
+
+fn raw(session_id, command):
+    return Smtp.raw(session_id, command)
+
+fn quit(session_id):
+    return Smtp.quit(session_id)
+
+fn close(session_id):
+    return Smtp.close(session_id)

@@ -1,0 +1,4 @@
+name=regex
+version=1.0.0
+description=ECMAScript duzenli ifadeler: eslesme, arama, degistirme, bolme
+entry=regex.pts

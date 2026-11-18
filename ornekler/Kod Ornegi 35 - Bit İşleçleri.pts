@@ -1,0 +1,7 @@
+// Konu: AND, OR, XOR, NOT ve bit kaydırma işlemleri.
+fn main():
+    u8 maske = 12
+    print("AND: " + string(maske & 10))
+    print("OR: " + string(maske | 3))
+    print("XOR: " + string(maske ^ 5))
+    print("Sola kaydır: " + string(maske << 1))

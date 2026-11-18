@@ -1,0 +1,10 @@
+import WinDialog as dialog
+
+fn message(text, title, flags):
+    return dialog.message(text, title, flags)
+
+fn open_file(title):
+    return dialog.open_file(title)
+
+fn save_file(title):
+    return dialog.save_file(title)

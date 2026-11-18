@@ -1,0 +1,4 @@
+name=google-genai
+version=1.0.0
+description=Google Gemini HTTP API istemcisi
+entry=google-genai.pts

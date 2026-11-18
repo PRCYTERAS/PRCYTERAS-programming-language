@@ -1,0 +1,40 @@
+// PRCYTERAS 0.10.6 — 2B oyun girdisi, zamanlama ve şeffaf sprite
+// PRCYTERAS 0.10.6 — 2D game input, timing, and transparent sprites
+import Engine, UI, File, System, Math
+
+fn main():
+    Engine.init_window(800, 600, "PRCYTERAS 2B Oyun Girdisi")
+    auto sprite = File.parent(System.executable_path()) + "\\assets\\kareli_doku.bmp"
+    double x = 350.0
+    double y = 260.0
+    double hiz = 240.0
+    string yazilan = ""
+    while Engine.is_running():
+        double dt = Engine.delta_time()
+        if Engine.key_down("A") or Engine.key_down("LEFT"):
+            x -= hiz * dt
+        if Engine.key_down("D") or Engine.key_down("RIGHT"):
+            x += hiz * dt
+        if Engine.key_down("W") or Engine.key_down("UP"):
+            y -= hiz * dt
+        if Engine.key_down("S") or Engine.key_down("DOWN"):
+            y += hiz * dt
+        if Engine.key_down("ESCAPE"):
+            Engine.request_close()
+
+        yazilan += Engine.get_text_input()
+        x = Math.clamp(x, 0.0, 768.0)
+        y = Math.clamp(y, 0.0, 568.0)
+
+        Engine.clear_screen(Color.rgb(24, 30, 44))
+        Engine.draw_rect(30, 30, 740, 520, Color.rgb(40, 52, 72))
+        Engine.draw_line(30, 80, 770, 80, Color.WHITE)
+        Engine.draw_image(sprite, x, y, 32, 32)
+        UI.draw_text("WASD/ok tuşları ile hareket, ESC ile çıkış", 40, 45, 20, Color.WHITE)
+        UI.draw_text("Fare: " + string(Engine.mouse_x()) + ", " + string(Engine.mouse_y()), 40, 95, 18, Color.WHITE)
+        UI.draw_text("Tuş metni: " + yazilan, 40, 125, 18, Color.WHITE)
+        if Engine.mouse_button_down("LEFT"):
+            UI.draw_text("Sol fare basılı", 40, 155, 18, Color.YELLOW)
+        Engine.render_frame()
+
+    Engine.unload_image(sprite)

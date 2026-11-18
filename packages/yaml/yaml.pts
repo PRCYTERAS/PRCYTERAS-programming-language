@@ -1,0 +1,24 @@
+// PRCYTERAS yaml paketi - gercek YAML ayristirma ve serilestirme.
+// Native arka uc: Yaml.
+import Yaml
+
+fn parse(text: string):
+    return Yaml.parse(text)
+
+fn stringify(value):
+    return Yaml.stringify(value)
+
+fn get(value, key: string):
+    return Yaml.get(value, key)
+
+fn set(value, key: string, item):
+    return Yaml.set(value, key, item)
+
+fn has(value, key: string):
+    return Yaml.has(value, key)
+
+fn keys(value):
+    return Yaml.keys(value)
+
+fn type(value):
+    return Yaml.type(value)

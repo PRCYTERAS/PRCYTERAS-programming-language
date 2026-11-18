@@ -1,0 +1,4 @@
+name=neat-ai
+version=1.0.0
+description=NEAT genom, mutasyon ve caprazlama
+entry=neat-ai.pts

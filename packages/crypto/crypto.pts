@@ -1,0 +1,54 @@
+// PRCYTERAS crypto paketi - SHA, HMAC, AES-CBC/GCM, ChaCha20, PBKDF2 ve rastgele bayt
+// Native arka uc: Crypto (pts_stdlib_call uzerinden calisir).
+import Crypto
+
+fn sha256(text):
+    return Crypto.sha256(text)
+
+fn sha1(text):
+    return Crypto.sha1(text)
+
+fn sha512(text):
+    return Crypto.sha512(text)
+
+fn md5(text):
+    return Crypto.md5(text)
+
+fn hmac_sha256(key, text):
+    return Crypto.hmac_sha256(key, text)
+
+fn hmac_sha1(key, text):
+    return Crypto.hmac_sha1(key, text)
+
+fn hmac_sha512(key, text):
+    return Crypto.hmac_sha512(key, text)
+
+fn aes_encrypt(key_hex, iv_hex, text):
+    return Crypto.aes_encrypt(key_hex, iv_hex, text)
+
+fn aes_decrypt(key_hex, iv_hex, cipher_hex):
+    return Crypto.aes_decrypt(key_hex, iv_hex, cipher_hex)
+
+fn gcm_encrypt(key_hex, iv_hex, text, aad):
+    return Crypto.aes_gcm_encrypt(key_hex, iv_hex, text, aad)
+
+fn gcm_decrypt(key_hex, iv_hex, cipher_hex, tag_hex, aad):
+    return Crypto.aes_gcm_decrypt(key_hex, iv_hex, cipher_hex, tag_hex, aad)
+
+fn chacha20(key_hex, nonce_hex, text, counter):
+    return Crypto.chacha20(key_hex, nonce_hex, text, counter)
+
+fn pbkdf2(password, salt, iterations, length):
+    return Crypto.pbkdf2(password, salt, iterations, length)
+
+fn random_bytes(count):
+    return Crypto.random_bytes(count)
+
+fn random_hex(bytes):
+    return Crypto.random_hex(bytes)
+
+fn equal(a, b):
+    return Crypto.equal(a, b)
+
+fn uuid():
+    return Crypto.uuid()

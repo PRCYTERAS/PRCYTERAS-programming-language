@@ -1,0 +1,15 @@
+// PRCYTERAS downloader paketi - Akisli dosya indirme, SHA-256 ozet ve dogrulama
+// Native arka uc: Downloader (pts_stdlib_call uzerinden calisir).
+import Downloader
+
+fn download(url, path, headers, timeout_ms):
+    return Downloader.download(url, path, headers, timeout_ms)
+
+fn fetch_text(url, headers):
+    return Downloader.fetch_text(url, headers)
+
+fn verify(path, sha256):
+    return Downloader.verify(path, sha256)
+
+fn sha256(path):
+    return Downloader.sha256(path)

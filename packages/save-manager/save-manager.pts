@@ -1,0 +1,18 @@
+// Dosya ve JSON uzerinden gercek kaydetme/yukleme islemleri.
+import Json
+import File
+
+fn save(path: string, value):
+    return File.write_text(path, Json.stringify(value))
+
+fn save_pretty(path: string, value):
+    return File.write_text(path, Json.stringify_pretty(value))
+
+fn load(path: string):
+    if not File.exists(path):
+        return null
+    auto text = File.read_text(path)
+    return Json.parse(text)
+
+fn exists(path: string):
+    return File.exists(path)

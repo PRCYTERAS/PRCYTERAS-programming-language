@@ -1,0 +1,18 @@
+// PRCYTERAS rate-limiter paketi - Token bucket hiz sinirlayici
+// Native arka uc: RateLimiter (pts_stdlib_call uzerinden calisir).
+import RateLimiter
+
+fn create(key, capacity, rate):
+    return RateLimiter.create(key, capacity, rate)
+
+fn allow(key, cost):
+    return RateLimiter.allow(key, cost)
+
+fn tokens(key):
+    return RateLimiter.tokens(key)
+
+fn reset(key):
+    return RateLimiter.reset(key)
+
+fn remove(key):
+    return RateLimiter.remove(key)

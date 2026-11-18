@@ -1,0 +1,4 @@
+name=physics2d
+version=1.0.0
+description=Impuls tabanli 2D fizik dunyasi
+entry=physics2d.pts

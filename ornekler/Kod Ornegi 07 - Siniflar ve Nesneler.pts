@@ -1,0 +1,15 @@
+// KOD ÖRNEĞİ 07 — Sınıflar ve nesneler
+// Öğrenilenler: alanları olan bir sınıf oluşturma, nesne üretme ve metot çağırma.
+
+class Oyuncu:
+    int puan = 0
+
+    fn puan_ekle(int miktar):
+        self.puan += miktar
+
+fn main():
+    auto oyuncu = Oyuncu()
+    oyuncu.puan_ekle(10)
+    oyuncu.puan_ekle(5)
+
+    print("Oyuncunun puanı: " + string(oyuncu.puan))

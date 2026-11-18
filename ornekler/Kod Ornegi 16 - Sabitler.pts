@@ -1,0 +1,7 @@
+// Konu: const ile program boyunca değişmemesi amaçlanan değerleri tanımlama.
+fn main():
+    const int PI_YAKLASIK = 3
+    const int DAKIKA = 60
+    int saat = 2
+    print("Dakika: " + string(saat * DAKIKA))
+    print("Pi yaklaşımı: " + string(PI_YAKLASIK))

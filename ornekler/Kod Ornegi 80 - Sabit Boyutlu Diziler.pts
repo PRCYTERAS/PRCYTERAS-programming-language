@@ -1,0 +1,18 @@
+// PRCYTERAS ornegi 80: LLVM stack uzerinde sabit boyutlu dizi
+// int[4] dizi 4 elemanli, sifir baslangicli yerel bir dizi olusturur.
+// Sabit tamsayi literal indisler derleme sirasinda denetlenir; degisken indisler calisma zamaninda sinir kontrolunden gecer.
+
+fn main():
+    int[4] sayilar
+    sayilar[0] = 10
+    sayilar[1] = 20
+    sayilar[2] = 30
+    sayilar[3] = 40
+
+    int toplam = 0
+    int i = 0
+    while i < 4:
+        toplam += sayilar[i]
+        i += 1
+
+    print("Toplam: " + string(toplam))

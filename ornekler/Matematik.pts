@@ -1,0 +1,2 @@
+fn iki_kat(int sayi) -> int:
+    return sayi * 2

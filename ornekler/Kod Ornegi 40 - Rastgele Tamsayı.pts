@@ -1,0 +1,6 @@
+// Konu: Yerleşik math.random modülünden aralık içinde sayı alma.
+import math.random as rand
+
+fn main():
+    int zar = rand.int_range(1, 6)
+    print("Zar: " + string(zar))

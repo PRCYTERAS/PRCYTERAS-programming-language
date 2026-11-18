@@ -1,0 +1,4 @@
+name=upnp
+version=1.0.0
+description=SSDP kesfi ve SOAP port yonlendirme (AddPortMapping/DeletePortMapping)
+entry=upnp.pts

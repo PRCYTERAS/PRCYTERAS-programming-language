@@ -1,0 +1,21 @@
+// Kod Ornegi 67: oyun ve masaustu uygulamalari icin Math/System temelleri
+// Example 67: Math/System basics for games and desktop applications
+import Math
+import System
+
+fn main():
+    double yari_cap = 3.0
+    double alan = Math.pi() * yari_cap * yari_cap
+    double aci = Math.radians(90.0)
+
+    print("Daire alani / Circle area: " + string(alan))
+    print("sin(90 derece) / sin(90 degrees): " + string(Math.sin(aci)))
+    print("Karekök 81 / Square root of 81: " + string(Math.sqrt(81.0)))
+    print("Sinirla 15 (0..10) / Clamp 15 (0..10): " + string(Math.clamp(15.0, 0.0, 10.0)))
+    print("Rastgele 0..1 / Random 0..1: " + string(Math.random()))
+    print("CPU cekirdegi / CPU cores: " + string(System.cpu_count()))
+    print("Calisma dizini / Working directory: " + System.cwd())
+    print("Bu programin yolu / Executable path: " + System.executable_path())
+
+    auto argumanlar = System.args()
+    print("Komut satiri arguman sayisi / Command-line argument count: " + string(argumanlar.size()))

@@ -1,0 +1,15 @@
+// PRCYTERAS qr-code paketi - Gercek QR kod uretimi (byte mode, EC M, v1-10, Reed-Solomon)
+// Native arka uc: QrCode (pts_stdlib_call uzerinden calisir).
+import QrCode
+
+fn encode(text):
+    return QrCode.encode(text)
+
+fn svg(text, scale, border):
+    return QrCode.svg(text, scale, border)
+
+fn text(text, border):
+    return QrCode.text(text, border)
+
+fn save_svg(text, path, scale):
+    return QrCode.save_svg(text, path, scale)

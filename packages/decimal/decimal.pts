@@ -1,0 +1,22 @@
+import Decimal
+
+fn parse(text):
+    return Decimal.parse(text)
+fn to_string(value):
+    return Decimal.to_string(value)
+fn from_int(value):
+    return Decimal.from_int(value)
+fn from_float(value):
+    return Decimal.from_float(value)
+fn add(a, b):
+    return Decimal.add(a, b)
+fn sub(a, b):
+    return Decimal.sub(a, b)
+fn mul(a, b):
+    return Decimal.mul(a, b)
+fn div(a, b, places):
+    return Decimal.div(a, b, places)
+fn round(value, places):
+    return Decimal.round(value, places)
+fn compare(a, b):
+    return Decimal.compare(a, b)

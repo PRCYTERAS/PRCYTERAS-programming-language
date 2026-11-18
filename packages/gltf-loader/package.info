@@ -1,0 +1,4 @@
+name=gltf-loader
+version=1.0.0
+description=Statik glTF 2.0 .gltf/.glb ucgen modeli; ilk buffer ve ilk primitive, float POSITION NORMAL TEXCOORD_0 destekler
+entry=gltf-loader.pts

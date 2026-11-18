@@ -1,0 +1,25 @@
+// PRCYTERAS 0.10.0 — 3B motorunde klavye, fare ve mouse-look.
+import Engine3D
+
+fn main():
+    Engine3D.init_window(1280, 720, "Klavye ve fare girdisi")
+    Engine3D.set_camera(4.0, 3.0, 7.0, 0.0, 0.0, 0.0, 60.0)
+    Engine3D.set_mouse_locked(true)
+    double aci = 0.0
+
+    while Engine3D.is_running():
+        double dt = Engine3D.delta_time()
+        if Engine3D.key_down("A"):
+            aci -= 1.5 * dt
+        if Engine3D.key_down("D"):
+            aci += 1.5 * dt
+
+        int fare_x = Engine3D.mouse_delta_x()
+        aci += fare_x * 0.002
+        if Engine3D.key_down("ESC"):
+            Engine3D.set_mouse_locked(false)
+            Engine3D.request_close()
+
+        Engine3D.begin_frame(Color.rgb(10, 14, 28))
+        Engine3D.draw_cube(0.0, 0.0, 0.0, 1.7, 0.0, aci, 0.0, Color.ORANGE)
+        Engine3D.end_frame()

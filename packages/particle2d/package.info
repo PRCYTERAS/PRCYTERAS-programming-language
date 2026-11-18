@@ -1,0 +1,4 @@
+name=particle2d
+version=1.0.0
+description=Parcacik yayici, patlama ve fizik guncellemesi
+entry=particle2d.pts

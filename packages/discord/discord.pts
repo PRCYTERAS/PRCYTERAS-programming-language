@@ -1,0 +1,15 @@
+// Discord REST API ve webhook islemleri; bot tokeni gerektiren cagirilarda token verin.
+import Discord
+
+fn gateway():
+    return Discord.gateway()
+fn send_webhook(url, text, username):
+    return Discord.send_webhook(url, text, username)
+fn send(token, channel_id, text):
+    return Discord.send(token, channel_id, text)
+fn me(token):
+    return Discord.me(token)
+fn guilds(token):
+    return Discord.guilds(token)
+fn messages(token, channel_id, limit):
+    return Discord.messages(token, channel_id, limit)

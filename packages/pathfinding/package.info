@@ -1,0 +1,4 @@
+name=pathfinding
+version=1.0.0
+description=A*, Dijkstra, BFS, akis alani ve gorus hatti
+entry=pathfinding.pts

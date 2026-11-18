@@ -1,0 +1,4 @@
+name=image-edit
+version=1.0.0
+description=Windows WIC ile PNG JPEG BMP TIFF boyutlandirma kirpma ve bicim donusumu
+entry=image-edit.pts

@@ -1,0 +1,4 @@
+name=mysql
+version=1.0.0
+description=Gercek MySQL/MariaDB wire protokolu (TLS olmadan)
+entry=mysql.pts

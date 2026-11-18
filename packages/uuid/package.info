@@ -1,0 +1,4 @@
+name=uuid
+version=1.0.0
+description=UUID v4, v7 ve SHA-1 tabanli v5 uretimi ile dogrulama
+entry=uuid.pts

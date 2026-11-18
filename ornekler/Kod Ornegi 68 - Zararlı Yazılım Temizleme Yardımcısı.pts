@@ -1,0 +1,66 @@
+// PRCYTERAS 0.10.5 — Kullanıcı onaylı tarama ve karantina örneği
+// Bu eğitim örneği yalnızca kullanıcının girdiği SHA-256 imzasını arar.
+import File, Console, System
+
+fn main():
+    print("PRCYTERAS savunma amaçlı temizleme yardımcısı")
+    print("Sistem kayıtlarını değiştirmeden önce şüpheli öğeyi doğrulayın.")
+
+    auto imza = Console.read_line("Güvendiğiniz SHA-256 imzası (boş bırakıp atlayın): ")
+    auto kok = Console.read_line("Taranacak klasör: ")
+    if File.is_directory(kok):
+        if imza != "":
+            auto dosyalar = File.walk(kok, 100000)
+            auto karantina = Console.read_line("Karantina klasörü: ")
+            int eslesen = 0
+            for dosya in dosyalar:
+                if File.sha256(dosya) == imza:
+                    eslesen += 1
+                    print("İmza eşleşmesi: " + dosya)
+                    auto onay = Console.read_line("Karantinaya taşımak için EVET yazın: ")
+                    if onay == "EVET":
+                        auto hedef = File.quarantine(dosya, karantina)
+                        if hedef:
+                            print("Karantinaya taşındı: " + hedef)
+                        else:
+                            print("Taşıma başarısız; dosya değiştirilmedi.")
+            print("İmza eşleşme sayısı: " + string(eslesen))
+        else:
+            print("İmza verilmedi; dosya taraması atlandı.")
+    else:
+        print("Taranacak klasör bulunamadı.")
+
+    print("--- Çalışan süreçler / Processes ---")
+    for surec in System.processes():
+        if imza != "" and surec.path != "":
+            if File.sha256(surec.path) == imza:
+                print("İmza eşleşen süreç: " + string(surec.pid) + " | " + surec.name + " | " + surec.path)
+                auto onay = Console.read_line("Bu süreci sonlandırmak için EVET yazın: ")
+                if onay == "EVET":
+                    print("Süreç durduruldu: " + string(System.terminate_process(surec.pid)))
+            else:
+                print(string(surec.pid) + " | " + surec.name + " | " + surec.path)
+        else:
+            print(string(surec.pid) + " | " + surec.name + " | " + surec.path)
+
+    print("--- Başlangıç girdileri / Startup entries ---")
+    for giris in System.startup_entries():
+        print(giris.scope + " | " + giris.name + " | " + giris.command)
+    auto kapsam = Console.read_line("Silinecek girdinin kapsamı (ör. HKCU_RUN): ")
+    if kapsam != "":
+        auto ad = Console.read_line("Silinecek girdinin tam adı: ")
+        auto onay = Console.read_line("Silmek için SIL " + ad + " yazın: ")
+        if onay == ("SIL " + ad):
+            print("Kayıt silindi: " + string(System.remove_startup_entry(kapsam, ad)))
+
+    print("--- Windows hizmetleri / Services ---")
+    for servis in System.services():
+        print(servis.name + " | " + servis.display_name + " | " + servis.state_name)
+    auto servis_adi = Console.read_line("Kaldırılacak hizmet adı (atlamak için boş bırakın): ")
+    if servis_adi != "":
+        auto onay = Console.read_line("Kaldırmak için KALDIR " + servis_adi + " yazın: ")
+        if onay == ("KALDIR " + servis_adi):
+            print("Hizmet kaldırıldı: " + string(System.remove_service(servis_adi)))
+
+    print("HKLM başlangıç girdileri ve hizmetler için yönetici izni gerekebilir.")
+    print("Karantinadaki dosya File.restore(yol, hedef) ile geri yüklenebilir.")

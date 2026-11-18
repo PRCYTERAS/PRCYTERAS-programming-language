@@ -1,0 +1,4 @@
+name=ftp-client
+version=1.0.0
+description=WinINet FTP istemcisi: listeleme, yukleme, indirme, dizin islemleri
+entry=ftp-client.pts

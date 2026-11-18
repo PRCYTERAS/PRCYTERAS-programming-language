@@ -1,0 +1,4 @@
+name=scheduler
+version=1.0.0
+description=Gecikmeli, aralikli ve Unix milisaniye zamanli gorev planlama; tick ile yoklanir
+entry=scheduler.pts

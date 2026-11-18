@@ -1,0 +1,15 @@
+// PRCYTERAS lighting2d paketi - Isin izleme tabanli 2D isik ve golge
+// Native arka uc: Lighting2D (pts_stdlib_call uzerinden calisir).
+import Lighting2D
+
+fn visibility(x, y, segments, radius):
+    return Lighting2D.visibility(x, y, segments, radius)
+
+fn attenuation(distance, radius):
+    return Lighting2D.attenuation(distance, radius)
+
+fn blend(light, base, ambient):
+    return Lighting2D.blend(light, base, ambient)
+
+fn circle(x, y, radius, segments):
+    return Lighting2D.circle(x, y, radius, segments)

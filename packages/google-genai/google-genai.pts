@@ -1,0 +1,11 @@
+// Gercek Google Gemini HTTP API istemcisi. API anahtari gerekir.
+import GoogleGenai
+
+fn chat(api_key, model, messages, temperature, max_tokens, base_url):
+    return GoogleGenai.chat(api_key, model, messages, temperature, max_tokens, base_url)
+
+fn generate(api_key, model, messages, temperature, max_tokens, base_url):
+    return GoogleGenai.generate(api_key, model, messages, temperature, max_tokens, base_url)
+
+fn models(api_key, base_url):
+    return GoogleGenai.models(api_key, base_url)

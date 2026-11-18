@@ -1,0 +1,4 @@
+name=zip-archive
+version=1.0.0
+description=Gercek DEFLATE/ZIP arsiv olusturma, listeleme ve cikarma
+entry=zip-archive.pts

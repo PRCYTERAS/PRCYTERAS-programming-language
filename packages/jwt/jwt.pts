@@ -1,0 +1,12 @@
+// PRCYTERAS jwt paketi - HS256/384/512 JWT imzalama, cozme ve dogrulama
+// Native arka uc: Jwt (pts_stdlib_call uzerinden calisir).
+import Jwt
+
+fn sign(payload, secret, algorithm):
+    return Jwt.sign(payload, secret, algorithm)
+
+fn decode(token):
+    return Jwt.decode(token)
+
+fn verify(token, secret):
+    return Jwt.verify(token, secret)

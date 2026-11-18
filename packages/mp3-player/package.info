@@ -1,0 +1,4 @@
+name=mp3-player
+version=1.0.0
+description=Windows Media Foundation MP3 kod cozme ve XAudio2 oynatma; oynatma icin Windows ses cikisi gerekir
+entry=mp3-player.pts

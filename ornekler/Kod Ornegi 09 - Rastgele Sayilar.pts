@@ -1,0 +1,8 @@
+// KOD ÖRNEĞİ 09 — Rastgele sayı üretme
+// Öğrenilenler: math.random modülünü içe aktarma ve rastgele tam sayı üretme.
+
+import math.random as rand
+
+fn main():
+    int zar = rand.int_range(1, 6)
+    print("Zar sonucu: " + string(zar))

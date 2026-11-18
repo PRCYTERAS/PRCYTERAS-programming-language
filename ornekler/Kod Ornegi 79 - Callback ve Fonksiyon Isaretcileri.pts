@@ -1,0 +1,50 @@
+// PRCYTERAS ornegi 79: imzali Function callback'leri
+// Duz fonksiyonlar yerel Function degiskenlerine atanabilir.
+// Function<T...> callback parametreleri scalar parametre imzasini belirtir.
+
+fn topla(a: int, b: int):
+    return a + b
+
+fn sabit_deger():
+    return 9
+
+fn yankila_bool(etkin: bool):
+    return etkin
+
+fn yankila_u16(deger: u16):
+    return deger
+
+fn yankila_float(deger: float):
+    return deger
+
+fn uygula(callback: Function<int, int>, ilk: int, ikinci: int):
+    return callback(ilk, ikinci)
+
+fn uygula_bool(callback: Function<bool>, etkin: bool):
+    return callback(etkin)
+
+fn uygula_u16(callback: Function<u16>, deger: u16):
+    return callback(deger)
+
+fn uygula_float(callback: Function<float>, deger: float):
+    return callback(deger)
+
+fn uygula_sifir(Function<> callback):
+    return callback()
+
+fn uygula_tur_once(Function<int, int> callback, ilk: int, ikinci: int):
+    return callback(ilk, ikinci)
+
+fn main():
+    auto eski_tarz = topla
+    Function<int, int> topla_isaretcisi = topla
+
+    print("Callback sonucu: " + string(eski_tarz(20, 22)))
+    print("Typed callback local: " + string(uygula(topla_isaretcisi, 20, 22)))
+    print("Type-first callback: " + string(uygula_tur_once(topla, 10, 15)))
+    print("Zero callback sonucu: " + string(uygula_sifir(sabit_deger)))
+    print("Bool callback: " + string(uygula_bool(yankila_bool, true)))
+    u16 kucuk_sayi = 12
+    float oran = 1.5
+    print("u16 callback: " + string(uygula_u16(yankila_u16, kucuk_sayi)))
+    print("Float callback: " + string(uygula_float(yankila_float, oran)))

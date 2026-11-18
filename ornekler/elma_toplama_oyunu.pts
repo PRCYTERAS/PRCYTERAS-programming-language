@@ -1,0 +1,100 @@
+// PRCYTERAS Oyun Motoru Modülleri
+import Engine, UI
+import math.random as rand
+
+// Oyun ekranı boyutları (C++ tarzı sabit/katı tipler)
+const int EKRAN_GENISLIK = 800
+const int EKRAN_YUKSEKLIK = 600
+
+class Sepet:
+    int x = 400
+    int y = 550
+    int hiz = 10
+    int genislik = 100
+
+    fn guncelle(string tus):
+        if tus == "SOL" and self.x > 0:
+            self.x -= self.hiz
+        if tus == "SAG" and self.x < (EKRAN_GENISLIK - self.genislik):
+            self.x += self.hiz
+
+    fn ciz():
+        // Python kolaylığında çizim, arka planda C++ performansı
+        Engine.draw_rect(self.x, self.y, self.genislik, 20, Color.BROWN)
+
+class Elma:
+    int x
+    int y = 0
+    int hiz
+    bool aktif = true
+
+    fn init():
+        // Rastgele başlangıç pozisyonu ve düşme hızı
+        self.x = rand.int_range(10, EKRAN_GENISLIK - 10)
+        self.hiz = rand.int_range(4, 8)
+
+    fn guncelle():
+        self.y += self.hiz
+        // Ekrandan çıktıysa elmayı deaktif et
+        if self.y > EKRAN_YUKSEKLIK:
+            self.aktif = false
+
+    fn ciz():
+        if self.aktif:
+            Engine.draw_circle(self.x, self.y, 15, Color.RED)
+
+// Ana Oyun Döngüsü ve Yönetimi
+fn main():
+    // Pencereyi oluştur
+    Engine.init_window(EKRAN_GENISLIK, EKRAN_YUKSEKLIK, "PRCYTERAS Elma Toplama Oyunu")
+    
+    // Nesneleri belleğe al (auto ile dinamik ama performanslı yönetim)
+    auto sepet = Sepet()
+    auto elmalar = List<Elma>() // C++ gibi dinamik dizi (Vector) altyapısı
+    
+    int skor = 0
+    int can = 3
+
+    // Saniyede 60 kare hızında çalışan C++ tabanlı oyun döngüsü
+    while Engine.is_running():
+        Engine.clear_screen(Color.BLACK)
+        string basilan_tus = Engine.get_input()
+
+        // 1. Sepeti güncelle
+        sepet.guncelle(basilan_tus)
+        sepet.ciz()
+
+        // 2. Belirli aralıklarla yeni elma üret
+        if rand.chance(0.02): // %2 ihtimalle her karede yeni elma düşer
+            elmalar.add(Elma())
+
+        // 3. Elmaları hareket ettir ve çarpışma kontrolü yap
+        for elma in elmalar:
+            elma.guncelle()
+            elma.ciz()
+
+            // Çarpışma Testi (Aşağıdaki matematik hesabı C++ hızında çalışır)
+            if elma.aktif and elma.y >= sepet.y and elma.y <= (sepet.y + 20):
+                if elma.x >= sepet.x and elma.x <= (sepet.x + sepet.genislik):
+                    skor += 10
+                    elma.aktif = false
+                    Engine.play_sound("point.wav")
+
+            // Kaçırılan elma kontrolü
+            if not elma.aktif and elma.y > EKRAN_YUKSEKLIK:
+                can -= 1
+                elmalar.remove(elma) // Bellekten temizle
+
+        // 4. Arayüzü (UI) Çiz
+        UI.draw_text("Skor: " + string(skor), 20, 20, 24, Color.WHITE)
+        UI.draw_text("Can: " + string(can), 700, 20, 24, Color.RED)
+
+        // Oyun Bitiş Kontrolü
+        if can <= 0:
+            UI.draw_text("OYUN BİTTİ!", 350, 300, 40, Color.RED)
+            Engine.render_frame()
+            Engine.sleep(3000) // 3 saniye bekle ve kapat
+            break
+
+        // Kareyi ekrana yansıt
+        Engine.render_frame()

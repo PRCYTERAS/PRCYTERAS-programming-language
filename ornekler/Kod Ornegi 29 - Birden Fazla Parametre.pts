@@ -1,0 +1,6 @@
+// Konu: Bir fonksiyona birden çok tür belirtilmiş parametre gönderme.
+fn etiket(string urun, int adet) -> string:
+    return urun + " adedi: " + string(adet)
+
+fn main():
+    print(etiket("Kalem", 12))

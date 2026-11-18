@@ -1,0 +1,4 @@
+name=yaml
+version=1.0.0
+description=Girinti tabanli YAML ayristirici ve serilestirici
+entry=yaml.pts

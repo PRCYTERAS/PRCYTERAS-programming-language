@@ -1,0 +1,27 @@
+// PRCYTERAS vector-db paketi - Kosinus benzerligi tabanli vektor veritabani
+// Native arka uc: VectorDb (pts_stdlib_call uzerinden calisir).
+import VectorDb
+
+fn open(name):
+    return VectorDb.open(name)
+
+fn add(name, id, vector, metadata):
+    return VectorDb.add(name, id, vector, metadata)
+
+fn search(name, vector, limit):
+    return VectorDb.search(name, vector, limit)
+
+fn size(name):
+    return VectorDb.size(name)
+
+fn remove(name, id):
+    return VectorDb.remove(name, id)
+
+fn clear(name):
+    return VectorDb.clear(name)
+
+fn save(name, path):
+    return VectorDb.save(name, path)
+
+fn load(name, path):
+    return VectorDb.load(name, path)

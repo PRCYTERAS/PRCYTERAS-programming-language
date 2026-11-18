@@ -1,0 +1,4 @@
+name=screenshot
+version=1.0.0
+description=Windows masaustu veya bolge goruntusunu BMP olarak yakalama
+entry=screenshot.pts

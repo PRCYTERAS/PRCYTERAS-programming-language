@@ -1,0 +1,14 @@
+import TerminalUi
+
+fn color(name, text):
+    return TerminalUi.color(name, text)
+fn reset():
+    return TerminalUi.reset()
+fn clear():
+    return TerminalUi.clear()
+fn move(x, y):
+    return TerminalUi.move(x, y)
+fn progress(value, width, label):
+    return TerminalUi.progress(value, width, label)
+fn table(rows, headers):
+    return TerminalUi.table(rows, headers)

@@ -1,0 +1,7 @@
+// Topic: English spellings for declarations and control flow.
+fn double(number: int) -> int:
+    return number * 2
+
+fn main():
+    if double(6) == 12:
+        print("English syntax works.")

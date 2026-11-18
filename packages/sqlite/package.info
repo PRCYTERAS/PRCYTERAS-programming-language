@@ -1,0 +1,4 @@
+name=sqlite
+version=1.0.0
+description=winsqlite3.dll uzerinden gercek SQLite: acma, sorgu, parametre, islem
+entry=sqlite.pts

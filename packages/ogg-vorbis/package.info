@@ -1,0 +1,4 @@
+name=ogg-vorbis
+version=1.0.0
+description=Yerlesik stb_vorbis kod cozucusu ile Ogg Vorbis dosyalarini PCM'e acma ve XAudio2 ile oynatma
+entry=ogg-vorbis.pts

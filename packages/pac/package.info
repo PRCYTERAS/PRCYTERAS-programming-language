@@ -1,0 +1,4 @@
+name=pac
+version=1.0.0
+description=Sunucu tarafli, dogrulanmis ihlaller icin artan sureli ban politikasi
+entry=pac.pts

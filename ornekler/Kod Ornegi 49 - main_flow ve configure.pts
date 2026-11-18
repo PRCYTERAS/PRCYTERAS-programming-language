@@ -1,0 +1,6 @@
+// Konu: Ana giriş için main_flow, yapılandırma için configure.
+configure COLOR -> GREEN
+
+main_flow
+    print("PRCYTERAS akışı başladı.")
+    print("Renk sabiti: " + string(COLOR))

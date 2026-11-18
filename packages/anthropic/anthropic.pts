@@ -1,0 +1,8 @@
+// Gercek Anthropic Messages API istemcisi. API anahtari gerekir.
+import Anthropic
+
+fn chat(api_key, model, messages, temperature, max_tokens, base_url):
+    return Anthropic.chat(api_key, model, messages, temperature, max_tokens, base_url)
+
+fn models(api_key, base_url):
+    return Anthropic.models(api_key, base_url)

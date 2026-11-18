@@ -1,0 +1,22 @@
+// PRCYTERAS 0.10.0 — Donanim hizlandirmali Direct3D 11 ile temel 3B sahne.
+// Derleme: pts cargo "Kod Ornegi 61 - 3B Donen Sekil.pts" --windowed --release
+// Pencereyi kapatmak icin sag ustteki X tusunu kullanin.
+
+import Engine3D
+
+fn main():
+    Engine3D.init_window(1280, 720, "PRCYTERAS 3B - Direct3D 11")
+    Engine3D.set_vsync(true)
+    Engine3D.set_camera(4.0, 3.0, 7.0, 0.0, 0.0, 0.0, 60.0)
+    Engine3D.set_light(-0.4, -1.0, -0.3, 0.9)
+
+    double aci = 0.0
+    while Engine3D.is_running():
+        double dt = Engine3D.delta_time()
+        aci += dt
+
+        Engine3D.begin_frame(Color.rgb(12, 18, 34))
+        Engine3D.draw_cube(0.0, 0.0, 0.0, 1.8, aci, aci * 0.7, 0.0, Color.rgb(70, 185, 255))
+        Engine3D.draw_sphere(-2.0, 0.0, 0.0, 0.7, Color.named("Gül Kırmızısı"))
+        Engine3D.draw_box(2.0, -0.7, 0.0, 1.0, 0.5, 1.0, Color.rgb(250, 190, 60))
+        Engine3D.end_frame()

@@ -1,0 +1,4 @@
+name=jwt
+version=1.0.0
+description=HS256/384/512 JWT imzalama, cozme ve dogrulama
+entry=jwt.pts

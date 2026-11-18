@@ -1,0 +1,10 @@
+// Konu: Nesne oluşturulurken otomatik çağrılan init metodu.
+class Oyuncu:
+    int can = 0
+
+    fn init():
+        self.can = 3
+
+fn main():
+    auto oyuncu = Oyuncu()
+    print("Başlangıç canı: " + string(oyuncu.can))

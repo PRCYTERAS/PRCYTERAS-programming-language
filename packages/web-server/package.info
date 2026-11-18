@@ -1,0 +1,4 @@
+name=web-server
+version=1.0.0
+description=Gercek HTTP/1.1 yerel sunucu ve yonlendirme catisi
+entry=web-server.pts

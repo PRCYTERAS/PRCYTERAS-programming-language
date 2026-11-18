@@ -1,0 +1,39 @@
+// PRCYTERAS uuid paketi - gercek UUID uretimi ve dogrulama.
+// Native arka uc: Uuid.
+import Uuid
+
+fn v4():
+    return Uuid.v4()
+
+fn generate():
+    return Uuid.generate()
+
+fn v7():
+    return Uuid.v7()
+
+fn v5(namespace: string, name: string):
+    return Uuid.v5(namespace, name)
+
+fn nil():
+    return Uuid.nil()
+
+fn is_valid(text: string):
+    return Uuid.is_valid(text)
+
+fn parse(text: string):
+    return Uuid.parse(text)
+
+fn version(text: string):
+    return Uuid.version(text)
+
+fn variant(text: string):
+    return Uuid.variant(text)
+
+fn to_upper(text: string):
+    return Uuid.to_upper(text)
+
+fn to_lower(text: string):
+    return Uuid.to_lower(text)
+
+fn equals(left: string, right: string):
+    return Uuid.equals(left, right)

@@ -1,0 +1,8 @@
+// Gercek yerel Ollama HTTP API istemcisi. Varsayilan adres localhost:11434'tur.
+import Ollama
+
+fn chat(api_key, model, messages, temperature, max_tokens, base_url):
+    return Ollama.chat(api_key, model, messages, temperature, max_tokens, base_url)
+
+fn models(api_key, base_url):
+    return Ollama.models(api_key, base_url)

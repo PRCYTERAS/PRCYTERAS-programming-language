@@ -1,0 +1,12 @@
+// Yerel model degil; OpenAI uyumlu Whisper API'sine gercek multipart yuklemesi yapar.
+// transcribe(api_key, audio_path, language="", endpoint=varsayilan)
+import Whisper
+
+fn transcribe(api_key: string, audio_path: string, language: string):
+    return Whisper.transcribe(api_key, audio_path, language)
+
+fn transcribe_default(api_key: string, audio_path: string):
+    return Whisper.transcribe(api_key, audio_path, "")
+
+fn transcribe_at(api_key: string, audio_path: string, language: string, endpoint: string):
+    return Whisper.transcribe(api_key, audio_path, language, endpoint)

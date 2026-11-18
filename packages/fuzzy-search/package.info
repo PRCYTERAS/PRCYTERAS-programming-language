@@ -1,0 +1,4 @@
+name=fuzzy-search
+version=1.0.0
+description=Levenshtein tabanli bulanik arama ve siralama
+entry=fuzzy-search.pts

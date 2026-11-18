@@ -1,0 +1,17 @@
+// Dalga bicimleri C++ runtime'da uretilir ve XAudio2 ile calar; Engine3D penceresinden bagimsizdir.
+import Engine3D
+
+fn play(effect: string, strength: float, volume: float):
+    return Engine3D.play_effect(effect, strength, volume)
+
+fn coin(volume: float):
+    return Engine3D.play_effect("coin", 1.0, volume)
+
+fn jump(volume: float):
+    return Engine3D.play_effect("jump", 1.0, volume)
+
+fn explosion(strength: float, volume: float):
+    return Engine3D.play_effect("explosion", strength, volume)
+
+fn footstep(volume: float):
+    return Engine3D.play_effect("footstep", 1.0, volume)

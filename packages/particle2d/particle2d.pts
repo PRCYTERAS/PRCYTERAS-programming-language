@@ -1,0 +1,21 @@
+// PRCYTERAS particle2d paketi - Parcacik yayici, patlama ve fizik guncellemesi
+// Native arka uc: Particle2D (pts_stdlib_call uzerinden calisir).
+import Particle2D
+
+fn create(rate, life, gravity, drag, name):
+    return Particle2D.create(rate, life, gravity, drag, name)
+
+fn burst(count, name):
+    return Particle2D.burst(count, name)
+
+fn update(dt, name):
+    return Particle2D.update(dt, name)
+
+fn count(name):
+    return Particle2D.count(name)
+
+fn particles(name):
+    return Particle2D.particles(name)
+
+fn clear(name):
+    return Particle2D.clear(name)

@@ -1,0 +1,29 @@
+PRCYTERAS 0.11.1-dev — 80 ÖĞRETİCİ KOD ÖRNEĞİ
+========================================
+
+Her dosya tek bir ana özelliğe odaklanır. Örnekleri sırayla inceleyin.
+01–13: İlk program, değişkenler, koşullar, döngüler, fonksiyon, sınıf, listeler,
+       rastgele sayılar, pencere/çizim, bit türleri, renk paleti, konsolsuz pencere.
+14–30: Metin, bool, sabitler, işleçler, karar yapıları, döngüler ve fonksiyonlar.
+31–38: Sınıflar, self, init, bit türleri, listeler, process/action.
+39–49: .pts modülleri, rastgelelik, metinler, listeler, Türkçe/İngilizce sözdizimi.
+50–60: Renkler, Engine/UI, pencere, klavye, ses, oyun döngüsü ve mini uygulama.
+61–72: Direct3D 11, OBJ/doku, kare hızı ve girdi, dosya/sistem API, 2B sprite, PAC ve hazır 2B/3B varlıklar.
+
+Örnek 39, aynı klasördeki Matematik.pts modülünü kullanır.
+Örnek 62, assets/egitim_kupu.obj ve assets/kareli_doku.bmp dosyalarını kullanır.
+
+Derleme örneği (dosya adında boşluk varsa tırnak kullanın):
+  pts cargo "Kod Ornegi 01 - Merhaba.pts"
+
+Konsol göstermeyen optimize bir grafik uygulaması:
+  pts cargo "Kod Ornegi 61 - 3B Donen Sekil.pts" --windowed --release --portable
+73: Sabit zaman adımlı 3B fizik, zemin/kutu/küre çarpışmaları, kuvvet ve zıplama sesi.
+74: XAudio2 WAV oynatma, konumsal ses, dinleyici hareketi ve uzaklık/pan etkisi.
+75: Arena ile hizali bellek havuzu; Vector3 degerlerini yazma/okuma ve reset.
+76: PAC anti-cheat modulu, dogrulanmis sunucu ihlali, kademeli ban, kalici kayıt ve cooldown.
+77: Onceden tanimlanan ayni modul fonksiyonlarina dogrudan LLVM cagrisi.
+
+78: Genericler, lambda/closure, comptime, defer, throw/catch, Optional/Result, Ref, Thread/Channel, operator overload ve Windows x64 C FFI.
+79: Callback ve fonksiyon işaretçileri.
+80: Sabit boyutlu yerel diziler ve derleme zamanı indis denetimleri.

@@ -1,0 +1,4 @@
+name=youtube-live
+version=1.0.0
+description=YouTube Data API canli yayin sorgu ve sohbet islemleri
+entry=youtube-live.pts

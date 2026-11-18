@@ -1,0 +1,6 @@
+// Konu: bool türü ve true/false değerleri.
+fn main():
+    bool oyun_acik = true
+    bool ses_acik = false
+    print("Oyun açık mı? " + string(oyun_acik))
+    print("Ses açık mı? " + string(ses_acik))

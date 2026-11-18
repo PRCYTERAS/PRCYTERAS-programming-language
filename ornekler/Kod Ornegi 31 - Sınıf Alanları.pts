@@ -1,0 +1,8 @@
+// Konu: class ile alanları olan yeni bir tür tanımlama.
+class Oyuncu:
+    string ad = "Ada"
+    int puan = 0
+
+fn main():
+    auto oyuncu = Oyuncu()
+    print(oyuncu.ad + " / " + string(oyuncu.puan))

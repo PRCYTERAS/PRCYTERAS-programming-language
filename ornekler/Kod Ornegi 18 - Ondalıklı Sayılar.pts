@@ -1,0 +1,6 @@
+// Konu: float ve double türleriyle ondalıklı değerler.
+fn main():
+    double urun_fiyati = 19.5
+    float indirim = 2.0
+    double son_fiyat = urun_fiyati - indirim
+    print("Ödenecek tutar: " + string(son_fiyat))

@@ -1,0 +1,33 @@
+// PRCYTERAS base64 paketi - gercek Base64/hex kodlama ve cozme.
+// Native arka uc: Base64.
+import Base64
+
+fn encode(value):
+    return Base64.encode(value)
+
+fn encode_url(value):
+    return Base64.encode_url(value)
+
+fn decode(text: string):
+    return Base64.decode(text)
+
+fn decode_url(text: string):
+    return Base64.decode_url(text)
+
+fn encode_bytes(value):
+    return Base64.encode_bytes(value)
+
+fn decode_bytes(text: string):
+    return Base64.decode_bytes(text)
+
+fn valid(text: string):
+    return Base64.valid(text)
+
+fn hex_encode(value):
+    return Base64.hex_encode(value)
+
+fn hex_decode(text: string):
+    return Base64.hex_decode(text)
+
+fn hex_decode_bytes(text: string):
+    return Base64.hex_decode_bytes(text)

@@ -1,0 +1,4 @@
+import Matematik
+
+fn main():
+    print(Matematik.iki_kat(21))

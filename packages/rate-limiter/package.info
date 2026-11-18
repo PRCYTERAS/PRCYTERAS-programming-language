@@ -1,0 +1,4 @@
+name=rate-limiter
+version=1.0.0
+description=Token bucket hiz sinirlayici
+entry=rate-limiter.pts

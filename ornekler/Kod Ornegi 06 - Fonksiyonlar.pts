@@ -1,0 +1,9 @@
+// KOD ÖRNEĞİ 06 — Fonksiyonlar
+// Öğrenilenler: parametre alan, türü belirtilmiş değer döndüren fonksiyon.
+
+fn dikdortgen_alani(int kisa_kenar, int uzun_kenar) -> int:
+    return kisa_kenar * uzun_kenar
+
+fn main():
+    int alan = dikdortgen_alani(8, 5)
+    print("Dikdörtgenin alanı: " + string(alan))

@@ -1,0 +1,6 @@
+// Konu: Aynı klasördeki Matematik.pts içinden fonksiyon kullanma.
+// Bu örneği ornekler klasöründen derleyin; Matematik.pts yanındadır.
+import Matematik
+
+fn main():
+    print("21'in iki katı: " + string(Matematik.iki_kat(21)))

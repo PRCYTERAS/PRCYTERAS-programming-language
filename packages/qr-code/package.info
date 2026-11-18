@@ -1,0 +1,4 @@
+name=qr-code
+version=1.0.0
+description=Gercek QR kod uretimi (byte mode, EC M, v1-10, Reed-Solomon)
+entry=qr-code.pts

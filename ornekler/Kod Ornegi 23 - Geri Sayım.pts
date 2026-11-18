@@ -1,0 +1,7 @@
+// Konu: while döngüsüyle geriye sayma.
+fn main():
+    int kalan = 5
+    while kalan > 0:
+        print(string(kalan))
+        kalan -= 1
+    print("Başla!")

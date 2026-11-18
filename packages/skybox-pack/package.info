@@ -1,0 +1,4 @@
+name=skybox-pack
+version=1.0.0
+description=GPU uzerinde prosedurel atmosfer, bulut, gun, ay, yildizlar ve gunduz/gece dongusu
+entry=skybox-pack.pts

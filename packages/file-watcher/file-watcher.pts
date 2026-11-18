@@ -1,0 +1,9 @@
+// Windows dizin degisiklikleri: added, removed, modified, renamed_from, renamed_to.
+import FileWatcher
+
+fn watch(path: string, recursive: bool):
+    return FileWatcher.watch(path, recursive)
+fn poll(watcher: int, timeout_ms: int):
+    return FileWatcher.poll(watcher, timeout_ms)
+fn close(watcher: int):
+    return FileWatcher.close(watcher)

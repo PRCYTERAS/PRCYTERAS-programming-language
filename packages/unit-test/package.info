@@ -1,0 +1,4 @@
+name=unit-test
+version=1.0.0
+description=Yerlesik birim test assert ve ozet sistemi
+entry=unit-test.pts

@@ -1,0 +1,14 @@
+import CliArgs
+
+fn parse(arguments):
+    return CliArgs.parse(arguments)
+fn flag(result, name):
+    return CliArgs.flag(result, name)
+fn value(result, name, fallback):
+    return CliArgs.value(result, name, fallback)
+fn positional(result, index, fallback):
+    return CliArgs.positional(result, index, fallback)
+fn positional_count(result):
+    return CliArgs.positional_count(result)
+fn help(spec):
+    return CliArgs.help(spec)

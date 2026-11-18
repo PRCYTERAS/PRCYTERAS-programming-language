@@ -1,0 +1,15 @@
+// KOD ÖRNEĞİ 08 — FlowList ve process/action
+// Öğrenilenler: küçük nesneler oluşturma, koleksiyona ekleme ve for döngüsüyle gezme.
+
+process Gorev [ad: string]
+    action Yazdir
+        print("Görev: " + ad)
+
+fn main():
+    gorevler = FlowList()
+    gorevler.add(Gorev("Dosyaları hazırla"))
+    gorevler.add(Gorev("Programı derle"))
+    gorevler.add(Gorev("Sonucu çalıştır"))
+
+    for gorev in gorevler
+        gorev.Yazdir()

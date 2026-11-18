@@ -1,0 +1,8 @@
+// Konu: Engine ile pencere açma ve pencere kapanana kadar çalıştırma.
+import Engine
+
+fn main():
+    Engine.init_window(640, 360, "İlk PRCYTERAS Pencerem")
+    while Engine.is_running():
+        Engine.clear_screen(Color.BLACK)
+        Engine.render_frame()

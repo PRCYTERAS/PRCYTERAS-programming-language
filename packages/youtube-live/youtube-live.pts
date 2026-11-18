@@ -1,0 +1,11 @@
+// YouTube Data API; API key, mesaj gonderme icin OAuth tokeni gerekir.
+import YouTubeLive
+
+fn search(api_key, query):
+    return YouTubeLive.search(api_key, query)
+fn videos(api_key, video_id):
+    return YouTubeLive.videos(api_key, video_id)
+fn live_chat(api_key, live_chat_id):
+    return YouTubeLive.live_chat(api_key, live_chat_id)
+fn send_chat(access_token, live_chat_id, text):
+    return YouTubeLive.send_chat(access_token, live_chat_id, text)

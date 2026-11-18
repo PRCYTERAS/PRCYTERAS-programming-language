@@ -1,0 +1,7 @@
+// Konu: Modulo (%) sonucu ile sayının çift olup olmadığını bulma.
+fn main():
+    int sayi = 28
+    if sayi % 2 == 0:
+        print("Çift sayı")
+    else:
+        print("Tek sayı")

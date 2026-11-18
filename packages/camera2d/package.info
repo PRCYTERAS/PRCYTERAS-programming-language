@@ -1,0 +1,4 @@
+name=camera2d
+version=1.0.0
+description=2D kamera donusumleri, takip ve sarsinti
+entry=camera2d.pts

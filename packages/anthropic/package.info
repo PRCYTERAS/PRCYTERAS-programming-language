@@ -1,0 +1,4 @@
+name=anthropic
+version=1.0.0
+description=Anthropic Claude HTTP API istemcisi
+entry=anthropic.pts

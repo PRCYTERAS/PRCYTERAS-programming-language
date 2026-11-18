@@ -1,0 +1,33 @@
+// PRCYTERAS irc-client paketi - Gercek IRC istemcisi: NICK/USER, JOIN, PRIVMSG ve satir okuma
+// Native arka uc: Irc (pts_stdlib_call uzerinden calisir).
+import Irc
+
+fn connect(host, port, timeout_ms):
+    return Irc.connect(host, port, timeout_ms)
+
+fn login(session_id, nick, real_name):
+    return Irc.login(session_id, nick, real_name)
+
+fn join(session_id, channel):
+    return Irc.join(session_id, channel)
+
+fn privmsg(session_id, target, message):
+    return Irc.privmsg(session_id, target, message)
+
+fn raw(session_id, line):
+    return Irc.raw(session_id, line)
+
+fn read(session_id, timeout_ms):
+    return Irc.read(session_id, timeout_ms)
+
+fn pong(session_id, token):
+    return Irc.pong(session_id, token)
+
+fn part(session_id, channel):
+    return Irc.part(session_id, channel)
+
+fn quit(session_id):
+    return Irc.quit(session_id)
+
+fn close(session_id):
+    return Irc.close(session_id)

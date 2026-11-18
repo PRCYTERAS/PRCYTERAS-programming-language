@@ -1,0 +1,4 @@
+name=whisper-pts
+version=1.0.0
+description=OpenAI Whisper ses transkripsiyon REST istemcisi; API anahtari, internet ve 25 MiB altinda ses dosyasi gerekir
+entry=whisper-pts.pts

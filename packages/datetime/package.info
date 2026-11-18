@@ -1,0 +1,4 @@
+name=datetime
+version=1.0.0
+description=Unix zaman, ISO-8601, yerel/UTC bicimleme ve tarih aritmetigi
+entry=datetime.pts

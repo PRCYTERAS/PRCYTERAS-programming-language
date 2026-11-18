@@ -1,0 +1,4 @@
+name=ollama
+version=1.0.0
+description=Yerel Ollama HTTP API istemcisi
+entry=ollama.pts

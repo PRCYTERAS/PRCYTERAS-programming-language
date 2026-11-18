@@ -1,0 +1,8 @@
+// Konu: rand.chance ile olasılığa bağlı bool sonucu üretme.
+import math.random as rand
+
+fn main():
+    if rand.chance(0.5):
+        print("Yazı")
+    else:
+        print("Tura")

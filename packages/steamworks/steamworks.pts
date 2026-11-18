@@ -1,0 +1,14 @@
+// Steam Web API cagirilari; API anahtari gerektiren islevlerde key verin.
+// Bu paket Steamworks SDK callback, overlay veya Steam istemcisi baglantisi saglamaz.
+import Steam
+
+fn player_summary(api_key, steam_id):
+    return Steam.player_summary(api_key, steam_id)
+fn owned_games(api_key, steam_id):
+    return Steam.owned_games(api_key, steam_id)
+fn news(api_key, app_id, count):
+    return Steam.news(api_key, app_id, count)
+fn app_details(app_id):
+    return Steam.app_details(app_id)
+fn resolve_vanity(api_key, vanity_url):
+    return Steam.resolve_vanity(api_key, vanity_url)

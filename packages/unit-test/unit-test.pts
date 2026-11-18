@@ -1,0 +1,20 @@
+import UnitTest
+
+fn assert_true(value, message):
+    return UnitTest.assert_true(value, message)
+fn assert_false(value, message):
+    return UnitTest.assert_false(value, message)
+fn assert_eq(a, b, message):
+    return UnitTest.assert_eq(a, b, message)
+fn assert_ne(a, b, message):
+    return UnitTest.assert_ne(a, b, message)
+fn assert_near(a, b, tolerance, message):
+    return UnitTest.assert_near(a, b, tolerance, message)
+fn fail(message):
+    return UnitTest.fail(message)
+fn pass():
+    return UnitTest.pass()
+fn summary():
+    return UnitTest.summary()
+fn reset():
+    return UnitTest.reset()

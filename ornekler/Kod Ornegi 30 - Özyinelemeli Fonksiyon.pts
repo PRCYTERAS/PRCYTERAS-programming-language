@@ -1,0 +1,8 @@
+// Konu: Bir fonksiyonun kendisini çağırması (özyineleme).
+fn faktoriyel(int n) -> int:
+    if n <= 1:
+        return 1
+    return n * faktoriyel(n - 1)
+
+fn main():
+    print("5! = " + string(faktoriyel(5)))

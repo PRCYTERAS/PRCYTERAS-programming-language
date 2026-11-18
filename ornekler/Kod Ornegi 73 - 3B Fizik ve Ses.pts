@@ -1,0 +1,64 @@
+// PRCYTERAS 0.10.8 — 3B fizik, carpismalar ve XAudio2 efektleri
+// W/A/S/D ile topa kuvvet uygulayin; SPACE ile yerdeyken ziplatin.
+// Her carpismada hizina gore konumsal bir ses calinir.
+// Derleme: pts cargo PRCYTERAS-3B-Fizik-ve-Ses.pts --windowed --release --portable
+
+import Engine3D, Physics3D
+
+fn main():
+    Engine3D.init_window(1280, 720, "PRCYTERAS 3B Fizik ve Ses Laboratuvari")
+    Engine3D.set_vsync(true)
+    Engine3D.set_camera(7.0, 5.0, 10.0, 0.0, 1.0, 0.0, 58.0)
+    Engine3D.set_light(-0.4, -1.0, -0.3, 1.2)
+
+    Physics3D.reset()
+    Physics3D.set_gravity(0.0, -9.81, 0.0)
+    int zemin = Physics3D.add_plane(0.0, 0.58, 0.82)
+    int top = Physics3D.add_sphere(0.0, 4.5, 0.0, 0.55, 1.0)
+    Physics3D.set_material(top, 0.62, 0.48)
+    Physics3D.set_damping(top, 0.06)
+
+    int kasa = Physics3D.add_box(1.6, 0.8, 0.0, 1.5, 1.6, 1.5, 0.0)
+    int blok = Physics3D.add_box(-2.1, 0.45, -1.2, 1.2, 0.9, 1.2, 0.0)
+
+    Engine3D.set_audio_listener(7.0, 5.0, 10.0, -0.42, -0.24, -0.87)
+    Engine3D.set_master_volume(0.75)
+    double ses_sonraki = 0.0
+    bool onceki_space = false
+
+    while Engine3D.is_running():
+        double dt = Engine3D.delta_time()
+        double zaman = Engine3D.time_seconds()
+
+        if Engine3D.key_down("W"):
+            Physics3D.apply_force(top, 0.0, 0.0, -22.0)
+        if Engine3D.key_down("S"):
+            Physics3D.apply_force(top, 0.0, 0.0, 22.0)
+        if Engine3D.key_down("A"):
+            Physics3D.apply_force(top, -22.0, 0.0, 0.0)
+        if Engine3D.key_down("D"):
+            Physics3D.apply_force(top, 22.0, 0.0, 0.0)
+
+        bool space = Engine3D.key_down("SPACE")
+        if space and not onceki_space and Physics3D.is_grounded(top):
+            Physics3D.apply_impulse(top, 0.0, 7.5, 0.0)
+            Engine3D.play_effect("jump", 1.0, 0.55)
+        onceki_space = space
+
+        Physics3D.step(dt)
+        double carpisma_hizi = Physics3D.impact_speed(top)
+        if carpisma_hizi > 2.8 and zaman >= ses_sonraki:
+            Engine3D.play_sound_3d("assets/starter3d/impact.wav", Physics3D.position_x(top), Physics3D.position_y(top), Physics3D.position_z(top), 0.9, 34.0)
+            ses_sonraki = zaman + 0.18
+
+        double top_x = Physics3D.position_x(top)
+        double top_y = Physics3D.position_y(top)
+        double top_z = Physics3D.position_z(top)
+
+        Engine3D.begin_frame(Color.rgb(15, 22, 34))
+        Engine3D.draw_box(0.0, -0.18, 0.0, 14.0, 0.36, 14.0, Color.rgb(54, 76, 68))
+        Engine3D.draw_box(1.6, 0.8, 0.0, 1.5, 1.6, 1.5, Color.rgb(140, 91, 54))
+        Engine3D.draw_box(-2.1, 0.45, -1.2, 1.2, 0.9, 1.2, Color.rgb(84, 129, 166))
+        Engine3D.draw_sphere(top_x, top_y, top_z, 0.55, Color.rgb(70, 185, 245))
+        Engine3D.draw_cube(top_x, top_y - 0.58, top_z, 0.16, 0.0, 0.0, 0.0, Color.rgb(35, 55, 80))
+        Engine3D.end_frame()

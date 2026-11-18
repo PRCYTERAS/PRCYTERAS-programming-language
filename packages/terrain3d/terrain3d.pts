@@ -1,0 +1,11 @@
+// Engine3D penceresi acildiktan sonra kullanilir. height_scale yuksekligi, spacing yatay hucre araligini belirler.
+import Engine3D
+
+fn load_heightmap(path: string, spacing: float, height_scale: float):
+    return Engine3D.load_heightmap(path, spacing, height_scale)
+
+fn draw(model_id: int, x: float, y: float, z: float, rotation_x: float, rotation_y: float, rotation_z: float, scale: float, color: string):
+    return Engine3D.draw_model(model_id, x, y, z, rotation_x, rotation_y, rotation_z, scale, color)
+
+fn unload(model_id: int):
+    return Engine3D.unload_model(model_id)

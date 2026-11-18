@@ -1,0 +1,23 @@
+// PRCYTERAS 0.10.0 — OBJ model ve PNG/JPEG/BMP doku yukleme.
+// Oyun varliklari yolu uygulamanin calisma klasorune gore verilir.
+// Ornek derleme: pts cargo "Kod Ornegi 62 - OBJ ve Doku.pts" --windowed --release
+
+import Engine3D
+
+fn main():
+    Engine3D.init_window(1280, 720, "PRCYTERAS OBJ model ornegi")
+    Engine3D.set_camera(4.0, 3.0, 7.0, 0.0, 0.0, 0.0, 60.0)
+    Engine3D.set_light(-0.4, -1.0, -0.3, 1.0)
+
+    int model = Engine3D.load_obj("assets/egitim_kupu.obj")
+    int texture = Engine3D.load_texture("assets/kareli_doku.bmp")
+    double aci = 0.0
+
+    while Engine3D.is_running():
+        aci += Engine3D.delta_time()
+        Engine3D.begin_frame(Color.rgb(18, 24, 40))
+        Engine3D.draw_textured_model(model, texture, 0.0, 0.0, 0.0, 0.0, aci, 0.0, 1.6)
+        Engine3D.end_frame()
+
+    Engine3D.unload_model(model)
+    Engine3D.unload_texture(texture)

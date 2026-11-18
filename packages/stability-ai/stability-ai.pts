@@ -1,0 +1,8 @@
+// Gercek Stability AI HTTP API istemcisi. API anahtari gerekir.
+import StabilityAi
+
+fn generate(api_key, prompt, output_path, aspect_ratio):
+    return StabilityAi.generate(api_key, prompt, output_path, aspect_ratio)
+
+fn balance(api_key):
+    return StabilityAi.balance(api_key)

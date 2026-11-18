@@ -1,0 +1,31 @@
+// PRCYTERAS 0.10.9-dev — Arena ile deger turu bellek kullanimi
+// Arena, oyun karesi gibi toplu omru olan kucuk veriler icin sabit havuz sunar.
+import Arena
+
+fn main():
+    auto frame_memory = Arena.create(4096)
+    if frame_memory < 0:
+        print("Arena olusturulamadi.")
+        return
+
+    // Vector3: x, y ve z bilesenlerini yan yana 3 adet 32-bit float sakla.
+    auto vector3 = Arena.alloc(frame_memory, 12, 16)
+    if vector3 < 0:
+        print("Vector3 icin bellek ayrilamadi.")
+        Arena.destroy(frame_memory)
+        return
+
+    Arena.write_f32(frame_memory, vector3, 12.5)
+    Arena.write_f32(frame_memory, vector3 + 4, -3.0)
+    Arena.write_f32(frame_memory, vector3 + 8, 42.25)
+
+    auto x = Arena.read_f32(frame_memory, vector3)
+    auto y = Arena.read_f32(frame_memory, vector3 + 4)
+    auto z = Arena.read_f32(frame_memory, vector3 + 8)
+    print("Vector3 = (" + string(x) + ", " + string(y) + ", " + string(z) + ")")
+    print("Kullanilan bayt: " + string(Arena.used(frame_memory)))
+
+    // Kare sona erince havuzdaki tum gecici alanlari tek hamlede sifirla.
+    Arena.reset(frame_memory)
+    print("Reset sonrasi kullanilan bayt: " + string(Arena.used(frame_memory)))
+    Arena.destroy(frame_memory)

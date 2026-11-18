@@ -1,0 +1,9 @@
+// Konu: remove ile eşleşen öğeyi listeden kaldırma.
+fn main():
+    auto sira = List<int>()
+    sira.add(1)
+    sira.add(2)
+    sira.add(3)
+    sira.remove(2)
+    for oge in sira:
+        print("Sırada: " + string(oge))

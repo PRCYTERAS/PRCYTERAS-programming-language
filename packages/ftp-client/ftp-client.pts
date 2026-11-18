@@ -1,0 +1,27 @@
+// PRCYTERAS ftp-client paketi - WinINet FTP istemcisi: listeleme, yukleme, indirme, dizin islemleri
+// Native arka uc: Ftp (pts_stdlib_call uzerinden calisir).
+import Ftp
+
+fn connect(host, user, password, port, passive):
+    return Ftp.connect(host, user, password, port, passive)
+
+fn list(session_id, path):
+    return Ftp.list(session_id, path)
+
+fn upload(session_id, remote_path, local_path):
+    return Ftp.upload(session_id, remote_path, local_path)
+
+fn download(session_id, remote_path, local_path):
+    return Ftp.download(session_id, remote_path, local_path)
+
+fn remove(session_id, remote_path):
+    return Ftp.remove(session_id, remote_path)
+
+fn mkdir(session_id, remote_path):
+    return Ftp.mkdir(session_id, remote_path)
+
+fn chdir(session_id, remote_path):
+    return Ftp.chdir(session_id, remote_path)
+
+fn close(session_id):
+    return Ftp.close(session_id)

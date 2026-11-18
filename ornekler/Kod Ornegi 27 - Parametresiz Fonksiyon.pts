@@ -1,0 +1,6 @@
+// Konu: fn ile fonksiyon tanımlama ve çağırma.
+fn selam_ver():
+    print("PRCYTERAS dünyasına hoş geldin!")
+
+fn main():
+    selam_ver()

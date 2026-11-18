@@ -1,0 +1,4 @@
+name=behavior-tree
+version=1.0.0
+description=Gercek behavior tree yurutucusu ve karatahta
+entry=behavior-tree.pts

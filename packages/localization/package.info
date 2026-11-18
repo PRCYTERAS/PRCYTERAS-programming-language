@@ -1,0 +1,4 @@
+name=localization
+version=1.0.0
+description=Coklu dil katalogu ve bicimlendirme
+entry=localization.pts

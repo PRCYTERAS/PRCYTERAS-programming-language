@@ -1,0 +1,4 @@
+name=vectordb
+version=1.0.0
+description=Yerel kosinus benzerligi vektor aramasi
+entry=vectordb.pts

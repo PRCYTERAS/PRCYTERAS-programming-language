@@ -1,0 +1,4 @@
+name=dns-lookup
+version=1.0.0
+description=DNS cozumleme, ters cozumleme, ICMP ping ve toplu sorgu
+entry=dns-lookup.pts

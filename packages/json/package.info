@@ -1,0 +1,4 @@
+name=json
+version=1.0.0
+description=Gercek JSON ayristirici ve serilestirici (native Json arka ucu)
+entry=json.pts

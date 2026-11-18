@@ -1,0 +1,12 @@
+// KOD ÖRNEĞİ 04 — Koşullar
+// Öğrenilenler: if / elif / else ile bir değere göre karar verme.
+
+fn main():
+    int sicaklik = 24
+
+    if sicaklik >= 30:
+        print("Hava sıcak.")
+    elif sicaklik >= 18:
+        print("Hava ılık.")
+    else:
+        print("Hava serin.")

@@ -1,0 +1,9 @@
+// KOD ÖRNEĞİ 03 — Değişkenler ve aritmetik
+// Öğrenilenler: tür belirterek değişken tanımlama, toplama ve string dönüşümü.
+
+fn main():
+    int elma = 5
+    int armut = 3
+    int toplam = elma + armut
+
+    print("Elma ve armut toplamı: " + string(toplam))

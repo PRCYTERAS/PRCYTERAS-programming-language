@@ -1,0 +1,4 @@
+name=argon2
+version=1.0.0
+description=RFC 9106 Argon2id sifre hashleme
+entry=argon2.pts

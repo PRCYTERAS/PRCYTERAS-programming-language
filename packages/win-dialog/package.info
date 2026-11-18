@@ -1,0 +1,4 @@
+name=win-dialog
+version=1.0.0
+description=Windows mesaj ve dosya secim pencereleri
+entry=win-dialog.pts

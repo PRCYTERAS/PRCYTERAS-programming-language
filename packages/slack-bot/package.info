@@ -1,0 +1,4 @@
+name=slack-bot
+version=1.0.0
+description=Slack Web API ve webhook istemcisi
+entry=slack-bot.pts

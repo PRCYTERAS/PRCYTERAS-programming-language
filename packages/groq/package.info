@@ -1,0 +1,4 @@
+name=groq
+version=1.0.0
+description=Groq sohbet ve model API istemcisi
+entry=groq.pts

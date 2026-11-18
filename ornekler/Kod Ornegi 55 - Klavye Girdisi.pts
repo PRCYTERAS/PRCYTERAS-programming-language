@@ -1,0 +1,16 @@
+// Konu: Engine.get_input ile SOL, SAG ve CIKIS değerlerini okuma.
+import Engine, UI
+
+fn main():
+    Engine.init_window(560, 280, "Klavye girdisi")
+    string durum = "Bir ok tuşuna basın"
+    while Engine.is_running():
+        string tus = Engine.get_input()
+        if tus == "SOL":
+            durum = "Sol tuşuna basıldı"
+        if tus == "SAG":
+            durum = "Sağ tuşuna basıldı"
+        Engine.clear_screen(Color.BLACK)
+        UI.draw_text(durum, 30, 50, 24, Color.WHITE)
+        UI.draw_text("ESC pencereyi kapatır", 30, 100, 18, Color.YELLOW)
+        Engine.render_frame()

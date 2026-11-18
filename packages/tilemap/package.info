@@ -1,0 +1,4 @@
+name=tilemap
+version=1.0.0
+description=JSON tabanli, sinir kontrollu 2B karo haritasi verisi
+entry=tilemap.pts

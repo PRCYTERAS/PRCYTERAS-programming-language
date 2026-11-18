@@ -1,0 +1,6 @@
+// Konu: Yerleşik renk paleti sayıları ve renk değerleri.
+fn main():
+    print("Adlandırılmış renk: " + string(Color.count()))
+    print("Üretilen renk: " + string(Color.generated_count()))
+    print("Kırmızı: " + Color.RED)
+    print("Örnek palet rengi: " + Color.at(149))

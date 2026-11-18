@@ -1,0 +1,4 @@
+name=downloader
+version=1.0.0
+description=Akisli dosya indirme, SHA-256 ozet ve dogrulama
+entry=downloader.pts

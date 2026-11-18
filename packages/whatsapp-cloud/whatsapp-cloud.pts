@@ -1,0 +1,9 @@
+// Meta WhatsApp Cloud API; erisim tokeni ve telefon numarasi kimligi gerekir.
+import WhatsApp
+
+fn send(token, phone_number_id, recipient, text):
+    return WhatsApp.send(token, phone_number_id, recipient, text)
+fn phone(token, phone_number_id):
+    return WhatsApp.phone(token, phone_number_id)
+fn templates(token, business_account_id):
+    return WhatsApp.templates(token, business_account_id)

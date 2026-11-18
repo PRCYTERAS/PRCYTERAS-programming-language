@@ -1,0 +1,22 @@
+// Konu: Fonksiyon, sınıf, metot, döngü ve koşulu birlikte kullanma.
+class Sepet:
+    int adet = 0
+    int kapasite = 4
+
+    fn ekle():
+        if self.adet < self.kapasite:
+            self.adet += 1
+            print("Bir meyve eklendi.")
+        else:
+            print("Sepet dolu.")
+
+fn kalan_yer(Sepet sepet) -> int:
+    return sepet.kapasite - sepet.adet
+
+fn main():
+    auto sepet = Sepet()
+    int tur = 0
+    while tur < 5:
+        sepet.ekle()
+        print("Kalan yer: " + string(kalan_yer(sepet)))
+        tur += 1

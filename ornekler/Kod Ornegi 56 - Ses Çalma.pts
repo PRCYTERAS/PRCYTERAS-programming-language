@@ -1,0 +1,7 @@
+// Konu: WAV dosyasını yürütülebilir dosyanın yanından çalma.
+// point.wav dosyasını üretilen EXE'nin yanına koyun.
+import Engine
+
+fn main():
+    Engine.play_sound("point.wav")
+    print("Ses dosyası varsa çalma isteği gönderildi.")

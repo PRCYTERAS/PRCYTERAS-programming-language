@@ -1,0 +1,4 @@
+name=redis
+version=1.0.0
+description=Gercek RESP2 istemcisi: string, hash, liste, pub/sub ve TTL
+entry=redis.pts

@@ -1,0 +1,11 @@
+// validate MP3'ü gercekten decode eder; play XAudio2 cikisindan calar.
+import Engine3D
+
+fn validate(path: string):
+    return Engine3D.audio_validate_mp3(path)
+
+fn play(path: string, volume: float):
+    return Engine3D.audio_play_mp3(path, volume)
+
+fn stop_all():
+    return Engine3D.stop_sounds()

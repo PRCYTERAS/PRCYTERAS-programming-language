@@ -1,0 +1,33 @@
+// PRCYTERAS localization paketi - Coklu dil katalogu ve bicimlendirme
+// Native arka uc: Localization (pts_stdlib_call uzerinden calisir).
+import Localization
+
+fn load(language, catalog):
+    return Localization.load(language, catalog)
+
+fn language(name):
+    return Localization.language(name)
+
+fn current():
+    return Localization.current()
+
+fn languages():
+    return Localization.languages()
+
+fn t(key):
+    return Localization.t(key)
+
+fn t_in(key, language):
+    return Localization.t(key, language)
+
+fn format(key, params):
+    return Localization.format(key, params)
+
+fn format_in(key, params, language):
+    return Localization.format(key, params, language)
+
+fn plural(key, count, language):
+    return Localization.plural(key, count, language)
+
+fn has(key, language):
+    return Localization.has(key, language)

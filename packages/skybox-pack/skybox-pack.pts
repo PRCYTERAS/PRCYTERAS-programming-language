@@ -1,0 +1,10 @@
+// Her kare begin_frame'den sonra, sahne modellerinden once cagrilmalidir.
+// draw(hour, clouds): hour 0..24, clouds 0..1. Bulut ve yildiz animasyonu GPU shader'inda uretilir.
+import Engine3D
+
+fn draw(hour: float, clouds: float):
+    return Engine3D.draw_sky(hour, clouds)
+
+// seconds_per_day degerinde bir gercek zaman araligini oyun ici 24 saate esler.
+fn draw_cycle(start_hour: float, seconds_per_day: float, clouds: float):
+    return Engine3D.draw_sky_cycle(start_hour, seconds_per_day, clouds)

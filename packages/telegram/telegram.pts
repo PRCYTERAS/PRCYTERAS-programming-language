@@ -1,0 +1,13 @@
+// Telegram Bot API; tokeni guvenli tutun ve kaynak koda yazmayin.
+import Telegram
+
+fn get_me(token):
+    return Telegram.get_me(token)
+fn send(token, chat_id, text):
+    return Telegram.send(token, chat_id, text)
+fn send_photo(token, chat_id, photo_url, caption):
+    return Telegram.send_photo(token, chat_id, photo_url, caption)
+fn updates(token, offset):
+    return Telegram.updates(token, offset)
+fn call(token, method, json_body):
+    return Telegram.call(token, method, json_body)

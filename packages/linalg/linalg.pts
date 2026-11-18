@@ -1,0 +1,34 @@
+import LinAlg
+
+fn vec2(x, y):
+    return LinAlg.vec2(x, y)
+fn vec3(x, y, z):
+    return LinAlg.vec3(x, y, z)
+fn vec4(x, y, z, w):
+    return LinAlg.vec4(x, y, z, w)
+fn add(a, b):
+    return LinAlg.add(a, b)
+fn sub(a, b):
+    return LinAlg.sub(a, b)
+fn scale(v, amount):
+    return LinAlg.scale(v, amount)
+fn dot(a, b):
+    return LinAlg.dot(a, b)
+fn cross(a, b):
+    return LinAlg.cross(a, b)
+fn length(v):
+    return LinAlg.length(v)
+fn normalize(v):
+    return LinAlg.normalize(v)
+fn distance(a, b):
+    return LinAlg.distance(a, b)
+fn lerp(a, b, t):
+    return LinAlg.lerp(a, b, t)
+fn mat4_identity():
+    return LinAlg.mat4_identity()
+fn mat4_multiply(a, b):
+    return LinAlg.mat4_multiply(a, b)
+fn quat_identity():
+    return LinAlg.quat_identity()
+fn quat_multiply(a, b):
+    return LinAlg.quat_multiply(a, b)

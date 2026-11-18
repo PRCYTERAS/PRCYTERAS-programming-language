@@ -1,0 +1,11 @@
+// XInput destekli Xbox uyumlu kontrolcüler. Kontrolcu yoksa state null doner.
+import Gamepad
+
+fn connected(index: int):
+    return Gamepad.connected(index)
+
+fn state(index: int):
+    return Gamepad.state(index)
+
+fn button_down(index: int, button: string):
+    return Gamepad.button_down(index, button)

@@ -1,0 +1,7 @@
+// Konu: Parametre alan ve return ile sonuç veren fonksiyon.
+fn kare(int sayi) -> int:
+    return sayi * sayi
+
+fn main():
+    int sonuc = kare(9)
+    print("9'un karesi: " + string(sonuc))

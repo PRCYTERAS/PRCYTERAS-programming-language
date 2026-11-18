@@ -1,0 +1,8 @@
+// Konu: process tanımı ve action içinden alan kullanımı.
+process Gorev [ad: string]
+    action Calistir
+        print("Çalışıyor: " + ad)
+
+fn main():
+    auto gorev = Gorev("Yedek al")
+    gorev.Calistir()

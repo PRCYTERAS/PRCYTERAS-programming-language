@@ -1,0 +1,9 @@
+// Konu: break komutuyla döngüyü erken bitirme.
+fn main():
+    int sayi = 1
+    while sayi <= 10:
+        if sayi == 4:
+            break
+        print("Kontrol edilen: " + string(sayi))
+        sayi += 1
+    print("Döngü sona erdi.")

@@ -1,0 +1,110 @@
+import Channel, Ref, Thread, Foreign, Optional, Result
+
+// English and Turkish comments can be used in .pts source files.
+// Bu ornek generic, closure, defer, hata, referans, kanal, thread ve C FFI ozelliklerini gosterir.
+
+class Resource:
+    int value = 3
+
+    fn drop():
+        print("Resource cleaned up / Kaynak kapatildi")
+
+class Vector:
+    int x = 0
+
+    fn operator +(other):
+        auto result = Vector()
+        result.x = self.x + other.x
+        return result
+
+class Box<T>:
+    T value
+
+fn identity<T>(value: T):
+    return value
+
+fn worker(value: int):
+    return value + 1
+
+fn fail_example():
+    defer print("Cleanup runs before catch / Temizlik catch'ten once calisir")
+    throw "sample error / ornek hata"
+
+fn main():
+    // Compile-time scalar expression / Derleme zamani sabit hesabı
+    int compile_time_value = comptime(10 + 2 * 3)
+    print("comptime:", compile_time_value)
+
+    // Type-erased generic function and generic class / Tur silimli generic fonksiyon ve sinif
+    print("generic:", identity<int>(comptime(12 + 4)))
+    auto box = Box<int>()
+    box.value = 88
+    print("generic class:", box.value)
+    List<List<int>> nested_lists = List()
+    nested_lists.add(List())
+    print("nested generic list:", nested_lists.size())
+
+    // Lambda closure; the worker receives a scalar snapshot / Lambda closure scalar yakalamasi
+    auto multiplier = 6
+    auto multiply = fn(value: int) -> value * multiplier
+    print("lambda:", multiply(7))
+    auto worker_args = List()
+    worker_args.add(7)
+    auto closure_task = Thread.spawn(multiply, worker_args)
+    print("thread closure:", Thread.join(closure_task))
+
+    // Managed references to object fields and list items / Nesne alani ve liste ogesine yonetilen referans
+    auto resource = Resource()
+    auto field_ref = Ref.field(resource, "value")
+    Ref.set(field_ref, 9)
+    print("field ref:", Ref.get(field_ref))
+    auto values = List()
+    values.add(5)
+    auto item_ref = Ref.item(values, 0)
+    Ref.set(item_ref, 11)
+    print("list ref:", Ref.get(item_ref))
+
+    // Thread-safe scalar message channel / Thread-safe scalar mesaj kanali
+    auto channel = Channel.create()
+    Channel.send(channel, 17)
+    print("channel:", Channel.receive(channel))
+    auto args = List()
+    args.add(41)
+    auto task = Thread.spawn("worker", args)
+    print("thread:", Thread.join(task))
+
+    // Operator overloading / Operator asiri yukleme
+    auto left = Vector()
+    auto right = Vector()
+    left.x = 3
+    right.x = 4
+    auto sum = left + right
+    print("operator +:", sum.x)
+
+    // LIFO cleanup on scope exit / Kapsam sonunda ters sirali temizleme
+    defer print("First registered, last run / Once kaydedilir, en son calisir")
+    defer print("Second registered, first run / Ikinci kayit, once calisir")
+
+    // Optional and Result return safe value wrappers / Guvenli Optional ve Result degerleri
+    auto maybe = Optional.some(5)
+    print("optional:", Optional.is_some(maybe), Optional.unwrap(maybe))
+    print("result:", Result.unwrap(Result.ok("OK")))
+
+    // Windows x64 C ABI example. Pass the exact function signature and types.
+    // Windows x64 C ABI ornegi. Fonksiyon imzasi ve turleri dogru verilmelidir.
+    auto ffi_args = List()
+    ffi_args.add(123)
+    Foreign.call_void("kernel32.dll", "SetLastError", ffi_args)
+    print("C FFI LastError:", Foreign.call_i64("kernel32.dll", "GetLastError", List()))
+
+    try:
+        Optional.unwrap(Optional.none())
+    catch error:
+        print("optional caught:", error)
+
+    try:
+        fail_example()
+    catch error:
+        print("caught:", error)
+
+    print("Finished / Tamamlandi")

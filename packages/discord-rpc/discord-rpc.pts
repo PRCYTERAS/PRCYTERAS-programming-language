@@ -1,0 +1,13 @@
+// Discord masaustu istemcisi calismali; named-pipe IPC ile baglanir.
+import DiscordRpc
+
+fn connect(client_id):
+    return DiscordRpc.connect(client_id)
+fn read(connection, timeout_ms):
+    return DiscordRpc.read(connection, timeout_ms)
+fn set_activity(connection, details, state, large_image, large_text):
+    return DiscordRpc.set_activity(connection, details, state, large_image, large_text)
+fn clear_activity(connection):
+    return DiscordRpc.clear_activity(connection)
+fn close(connection):
+    return DiscordRpc.close(connection)

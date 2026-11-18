@@ -1,0 +1,24 @@
+// PRCYTERAS toml paketi - gercek TOML ayristirma ve serilestirme.
+// Native arka uc: Toml.
+import Toml
+
+fn parse(text: string):
+    return Toml.parse(text)
+
+fn stringify(value):
+    return Toml.stringify(value)
+
+fn get(value, key: string):
+    return Toml.get(value, key)
+
+fn set(value, key: string, item):
+    return Toml.set(value, key, item)
+
+fn has(value, key: string):
+    return Toml.has(value, key)
+
+fn keys(value):
+    return Toml.keys(value)
+
+fn type(value):
+    return Toml.type(value)

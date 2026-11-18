@@ -1,0 +1,4 @@
+name=imgui-pts
+version=1.0.0
+description=PRCYTERAS Engine uzerinde immediate-mode tarzinda 2B arayuz bilesenleri
+entry=imgui-pts.pts

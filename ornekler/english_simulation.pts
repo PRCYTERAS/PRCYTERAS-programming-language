@@ -1,0 +1,34 @@
+configure MODULE -> Engine, UI
+configure COLOR -> GREEN
+
+process SetupTask [text: string, wait: number]
+    action Start
+        Engine -> write("[+] " + text + " operation started...")
+        Engine -> wait(wait)
+        Engine -> write("[OK] " + text + " completed successfully.")
+        Engine -> draw_line()
+
+main_flow
+    Engine -> set_title("PRCYTERAS CLI Ecosystem - Setup Simulation")
+    Engine -> set_color(COLOR)
+    Engine -> write("=======================================")
+    Engine -> write("      PRCYTERAS (.pts) COMPILER       ")
+    Engine -> write("=======================================")
+    Engine -> wait(1000)
+
+    tasks = new FlowList()
+    tasks -> add(SetupTask("Checking the installation directory", 1500))
+    tasks -> add(SetupTask("Loading the pts cargo compiler core", 2000))
+    tasks -> add(SetupTask("Copying standard modules", 1800))
+    tasks -> add(SetupTask("Updating the system PATH variable", 1200))
+
+    for each task in tasks
+        task -> Start()
+        Engine -> wait(500)
+
+    Engine -> write("\n=======================================")
+    Engine -> write(" PRCYTERAS WAS INSTALLED SUCCESSFULLY ")
+    Engine -> write("=======================================")
+    Engine -> write("Build with: pts cargo source.pts -o C:\\Builds\\program.exe")
+    Engine -> write("\n[i] Simulation completed. Closing...")
+    Engine -> wait(3000)

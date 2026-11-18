@@ -1,0 +1,17 @@
+// Gercek Windows bildirim alani API'si; onceden Engine penceresi acilmis olmalidir.
+import TrayIcon
+
+fn add(icon_path: string, tooltip: string):
+    return TrayIcon.add(icon_path, tooltip)
+
+fn set_tooltip(tooltip: string):
+    return TrayIcon.set_tooltip(tooltip)
+
+fn balloon(title: string, message: string, timeout_ms: int):
+    return TrayIcon.balloon(title, message, timeout_ms)
+
+fn poll_event():
+    return TrayIcon.poll_event()
+
+fn remove():
+    return TrayIcon.remove()

@@ -1,0 +1,4 @@
+name=gif-recorder
+version=1.0.0
+description=Win32 ekran bolgesinden GIF89a kaydi; 3-30 FPS, 600 kare ve 64 MiB piksel belleği siniri
+entry=gif-recorder.pts

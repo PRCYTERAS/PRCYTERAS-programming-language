@@ -1,0 +1,84 @@
+// PRCYTERAS json paketi - gercek JSON ayristirma, erisim ve serilestirme.
+// Native arka uc: Json (compiler/runtime icinde pts_stdlib_call ile calisir).
+import Json
+
+fn parse(text: string):
+    return Json.parse(text)
+
+fn stringify(value):
+    return Json.stringify(value)
+
+fn pretty(value):
+    return Json.stringify_pretty(value)
+
+fn get(value, key: string):
+    return Json.get(value, key)
+
+fn set(value, key: string, item):
+    return Json.set(value, key, item)
+
+fn has(value, key: string):
+    return Json.has(value, key)
+
+fn remove(value, key: string):
+    return Json.remove(value, key)
+
+fn remove_at(value, index: int):
+    return Json.remove_at(value, index)
+
+fn keys(value):
+    return Json.keys(value)
+
+fn values(value):
+    return Json.values(value)
+
+fn at(value, index: int):
+    return Json.at(value, index)
+
+fn push(value, item):
+    return Json.push(value, item)
+
+fn length(value):
+    return Json.length(value)
+
+fn type(value):
+    return Json.type(value)
+
+fn is_null(value):
+    return Json.is_null(value)
+
+fn is_object(value):
+    return Json.is_object(value)
+
+fn is_array(value):
+    return Json.is_array(value)
+
+fn is_string(value):
+    return Json.is_string(value)
+
+fn is_number(value):
+    return Json.is_number(value)
+
+fn is_bool(value):
+    return Json.is_bool(value)
+
+fn as_string(value):
+    return Json.as_string(value)
+
+fn as_int(value):
+    return Json.as_int(value)
+
+fn as_float(value):
+    return Json.as_float(value)
+
+fn as_bool(value):
+    return Json.as_bool(value)
+
+fn new_object():
+    return Json.new_object()
+
+fn new_array():
+    return Json.new_array()
+
+fn merge(target, source):
+    return Json.merge(target, source)

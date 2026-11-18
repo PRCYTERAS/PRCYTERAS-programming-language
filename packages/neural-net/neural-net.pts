@@ -1,0 +1,21 @@
+// PRCYTERAS neural-net paketi - Gercek MLP, ileri besleme ve geri yayilim
+// Native arka uc: NeuralNet (pts_stdlib_call uzerinden calisir).
+import NeuralNet
+
+fn create(name, sizes):
+    return NeuralNet.create(name, sizes)
+
+fn forward(name, input):
+    return NeuralNet.forward(name, input)
+
+fn train(name, input, target, learning_rate):
+    return NeuralNet.train(name, input, target, learning_rate)
+
+fn predict(name, input):
+    return NeuralNet.predict(name, input)
+
+fn save(name, path):
+    return NeuralNet.save(name, path)
+
+fn load(name, path):
+    return NeuralNet.load(name, path)

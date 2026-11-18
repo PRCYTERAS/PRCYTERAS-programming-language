@@ -1,0 +1,4 @@
+name=telegram
+version=1.0.0
+description=Telegram Bot API istemcisi (bot tokeni gerekir)
+entry=telegram.pts

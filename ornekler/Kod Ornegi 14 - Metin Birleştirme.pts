@@ -1,0 +1,6 @@
+// Konu: Metinleri + ile birleştirme ve sayıları string(...) ile metne çevirme.
+fn main():
+    string ad = "Deniz"
+    int yas = 16
+    string mesaj = "Merhaba, " + ad + "! Yaşın: " + string(yas)
+    print(mesaj)

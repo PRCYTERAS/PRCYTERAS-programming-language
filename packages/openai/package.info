@@ -1,0 +1,4 @@
+name=openai
+version=1.0.0
+description=OpenAI uyumlu sohbet ve model API istemcisi
+entry=openai.pts
