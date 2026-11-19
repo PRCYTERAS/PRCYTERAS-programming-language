@@ -2,7 +2,7 @@
 # 🚀 PRCYTERAS Beta 1.0
 
 ### ⬇️ [Kurulum Sihirbazını Doğrudan İndir (PTS-beta1.0-download.exe)](https://github.com/PRCYTERAS/PRCYTERAS-programming-language/releases/tag/v1.0.0-beta)
-> *Tek tıkla indirip kurun — Zig, LLVM, 101 paket ve 80 kod örneği dahil.*
+> *kurulum sihirbazını tek tıkla indirip kurun*
 
 PTS (PRCYTERAS) is a programming language and compiler for native Windows x64 programs. The `ornekler` folder contains the included `.pts` learning examples.
 
@@ -11,7 +11,7 @@ PTS (PRCYTERAS) is a programming language and compiler for native Windows x64 pr
 Yeni bir CMD veya PowerShell penceresinde derleyin:
 
 ```powershell
-pts cargo "C:\Projeler\program.pts"
+pts cargo (dosya adı).pts (release ileri düzey agresif performans sağlar --windowed arkada cmd ekranının açılmamasını sağlar oyunlar ve programlar için ideal ve --portable ise --release çıktısını farklı x64 işlemcilerde çalışmaya daha uygun üretir
 ```
 
 Release için `--release`, farklı x64 işlemcilerle daha uyumlu release çıktısı için `--release --portable` kullanın. Kurulumdaki `ornekler` klasöründe 88 adet `.pts` örneği bulunur. Bu klasördeki `PTS-README-TR.txt` Türkçe başlangıç kılavuzudur.
@@ -23,7 +23,7 @@ Release optimizasyonları hız artışı garanti etmez. Signed tamsayı taşmas�
 Open a new Command Prompt or PowerShell window and build:
 
 ```powershell
-pts cargo "C:\Projects\program.pts"
+pts cargo (file_name).pts — The 'release' option provides an advanced, high-performance optimization; the '--windowed' option prevents a command prompt (CMD) window from appearing in the background, making it ideal for games and applications. The '--portable' option ensures that the 'release' output is better suited for execution across a variety of x64 processors.
 ```
 
 Use `--release` for release builds, or `--release --portable` for release executables more suitable for different x64 processors. The installation's `ornekler` folder contains 88 `.pts` examples. `PTS-README-EN.txt` in this folder is the English quick-start guide.
